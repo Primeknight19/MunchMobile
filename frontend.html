@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MunchMobile Restaurant Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 10px;
+            background: #f8f8f8;
+            border-bottom: 1px solid #eee;
+        }
+        ul li:last-child {
+            border-bottom: none;
+        }
+        ul li:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Menu Items</h1>
+    <ul id="menuItems"></ul>
+</div>
+
+<script>
+function fetchMenuItems() {
+    fetch('menu.php')
+    .then(response => response.json())
+    .then(data => {
+        const menuList = document.getElementById('menuItems');
+        menuList.innerHTML = ''; // Clear existing items
+        data.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.restaurant} - ${item.name} - $${item.price}`;
+            menuList.appendChild(li);
+        });
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+document.addEventListener('DOMContentLoaded', fetchMenuItems);
+</script>
+
+</body>
+</html>
