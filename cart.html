@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cart-style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Cart</title>
+</head>
+<body>
+    <!--main-->
+    <div class="main">
+	<span style="float:left"><h1 style="color: var(--whiteColor);">MunchTime</h1></span>
+	<span style="float:right">
+		<div class="profile">
+			<a class="user" href="#" title="Profile">
+				<ion-icon name="person-outline"></ion-icon>
+			</a>
+		</div>
+	</span>
+        <!--main highlight-->
+        <div  class="main-highlight">
+			<ion-icon name="location-outline"></ion-icon> Delivering to: Street, Town, State
+        </div>
+		<div class="sub-total">
+			<h2 class="main-title">0 Items</h2>
+			<br />
+			<span style="float:left">Subtotal<br /> GST Included</span>
+			<span style="float:right">$0</span>
+			<br /><br />
+			<hr class="divider">
+			<span style="float:left">Delivery Fee</span>
+			<span style="float:right">$0</span>
+			<br />
+			<hr class="divider">
+			<button class="checkout-button">Checkout - $0.00</button>
+        </div>		
+        <!--main menus / order-->
+		<h1>My Cart</h1>
+		<br /><br />
+		<button class="simple-button" onClick="window.location.href = 'index.html'">Back to menu</button>
+        <div class="items">
+			<table>
+				<tr>
+					<td style="width:20%"><img class="detail-img" src="images/seafood.jpeg"></td>
+					<td style="width:50%; padding-left:20px;"><span class="item-name">Item name</span>
+					<br /><br /><br />
+					<button class="simple-button">Remove</button></td>
+					<td style="width:20%">
+						<button class="change-num" onClick="subAmount()">-</button>
+						&nbsp;&nbsp;<span id="amountEle" style="font-size:2vmax;">1</span>&nbsp;&nbsp;
+						<button class="change-num" onClick="addAmount()">+</button>
+					</td>
+					<td style="width:10%">$0.00</td>
+				</tr>
+			</table>
+			<span style="float:left"></span>
+		</div>
+    </div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!--adding javascript-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script src="app.js"></script>
+</html>

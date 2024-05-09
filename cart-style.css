@@ -1,0 +1,127 @@
+:root{
+    --primaryColor: #545bbb;
+    --secondaryColor: #ffc107;
+    --whiteColor: #fff;
+    --blackColor: #222;
+    --softGreencolor: #b2b7fb;
+    --darkGreyColor: #a7a7a7;
+    --greyColor: #f5f5f5;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Open Sans' sans-serif;
+}
+
+body{
+    width: 100%;
+    height: auto;
+    display: flex;
+	background-color: var(--softGreencolor);
+}
+
+.main {
+    width: 100%;
+    height: max-content;
+    min-width: 100px;
+    padding: 2%;
+    background-color: var(--softGreencolor);
+}
+
+.main-highlight {
+    margin: 5% 0;
+    padding: 2%;
+    background-color: var(--primaryColor);
+    border-radius: 8px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+}
+
+.items {
+    min-height: 100%;
+	width: 55%;
+    background-color: var(--greyColor);
+    padding: 2%;
+    border-radius: 8px;
+	float: left;
+	margin:10px 0;
+}
+
+.sub-total {
+    min-height: 100%;
+	width: 30%;
+    background-color: var(--secondaryColor);
+    padding: 3%;
+    border-radius: 8px;
+	float: right;
+	margin: 10px 10% 0 0
+}
+
+.divider {
+    margin: 1rem 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--primaryColor);
+    border: none;
+}
+
+.checkout-button {
+	width: 100%;
+	border-radius: 16px;
+	background-color: var(--primaryColor);
+	color: var(--whiteColor);
+	font-size: 20px;
+	font-weight: bold;
+	padding: 2%;
+	cursor: pointer;
+}
+
+.detail-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+table {
+	width: 100%;
+}
+
+.item-name {
+	color: var(--primaryColor);
+	font-size:20px;
+	
+}
+
+.simple-button {
+	border:none; 
+	text-decoration:underline;
+	cursor: pointer;
+	background-color: transparent;
+}
+
+.change-num {
+	border-radius:100%; 
+	font-size:2vmax;
+	cursor: pointer;
+	width: 25%;
+	background-color: white;
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--whiteColor);
+    font-size: 20px;
+    color: var(--primaryColor);
+    text-decoration: none;
+    padding: 0 10px;
+    height: 40px;
+    border-radius: 50%;
+}
