@@ -1,3 +1,5 @@
+var amount = 1;
+
 // Showing navbar when click menu on mobile view
 const mobile = document.querySelector('.menu-toggle');
 const mobileLink = document.querySelector('.sidebar');
@@ -189,3 +191,22 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     // Redirect to the main page if login is successful
     window.location.href = 'index.html'; // Ensure this path is correct
 });
+
+// Increment and decrement functions for cart items
+function addAmount(){
+	// Increment order amount
+	amount++;
+	var numberSpan = document.getElementById("amountEle");
+	numberSpan.innerHTML = amount;
+}
+
+function subAmount(){
+	if(amount == 1){
+	}
+	else{
+		// Decrement order amount
+		amount--;
+		var numberSpan = document.getElementById("amountEle");
+		numberSpan.innerHTML = amount;
+	}
+}
