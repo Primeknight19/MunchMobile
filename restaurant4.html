@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Munch Mobile - Restaurant</title>
+    <style>
+
+        .main {
+            width: 100%;
+            height: max-content;
+            min-width: 100px;
+            padding: 2%;
+            background-color: var(--softGreencolor);
+            margin-left: 250px;
+        }
+        .restaurant-hero img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .restaurant-info, .about-restaurant, .customer-reviews {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .menu-highlights {
+        clear: both; 
+        }
+
+        .menu-highlights h2, .restaurant-info h1, .about-restaurant h2, .customer-reviews h2 {
+            color: #d35400;
+            padding-left: 40px;
+        }
+        .highlight-card, .review {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .highlight-card:hover, .review:hover {
+            transform: scale(1.05);
+        }
+        .highlight-wrapper, .customer-reviews {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .highlight-img, .highlight-desc, .review {
+            text-align: center;
+            padding: 15px;
+        }
+        .highlight-img {
+            width: 50%;
+            height: 200px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class = "sidebar">
+        <!--logo-->
+        <h1 class = "logo">MunchTime</h1>
+        <!--list of menu-->
+        <div class = "sidebar-menus">
+            <a href="#"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="#"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+            <a href="#"><ion-icon name="wallet-outline"></ion-icon>Wallet</a>
+            <a href="#"><ion-icon name="notifications-outline"></ion-icon>Notification</a>
+            <a href="#"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a href="#"><ion-icon name="settings-outline"></ion-icon>Setting</a>
+        </div>
+
+        <!--logout-->
+        <div class="sidebar-logout">
+            <a href="#"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="restaurant-hero">
+            <img src="https://www.namisushionline.com/images/namifront4.jpg" alt="Featured Japanese Restaurant Image">
+        </div>
+        <div class="restaurant-info">
+            <h1>Nami Sushi</h1>
+            <p>Delve into the art of Japanese cuisine with our exquisite sushi and sashimi, prepared with the freshest ingredients.</p>
+            <p><strong>Address:</strong> 2345 Sushi Way, Tokyo Town, TT 12345</p>
+            <p><strong>Hours:</strong> Monday - Sunday, 10:00 AM to 10:00 PM</p>
+        </div>
+        <div class="menu-highlights">
+            <h2>Featured Dishes</h2>
+            <div class="highlight-wrapper">
+                <div class="highlight-card">
+                    <img class="highlight-img" src="https://www.seafoodandmore.com.au/cdn/shop/products/ADF0AD79-7824-4C6C-94C0-6BE86826663B_23255145-1fae-4c8a-8efe-bf722b43a857.jpg?v=1597295045" alt="Sushi Platter">
+                    <div class="highlight-desc">
+                        <h4>Sushi Platter</h4>
+                        <p>$25.00</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img class="highlight-img" src="https://www.marionskitchen.com/wp-content/uploads/2024/04/20240329_MIW_15-Minute-Creamy-Korean-Ramen_Bangkok-7-scaled.webp" alt="Ramen Bowl">
+                    <div class="highlight-desc">
+                        <h4>Ramen Bowl</h4>
+                        <p>$15.00</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img class="highlight-img" src="https://media-cdn.tripadvisor.com/media/photo-s/12/5e/83/85/bento-box-a-2-prawn-tempura.jpg" alt="Tempura Bento">
+                    <div class="highlight-desc">
+                        <h4>Tempura Bento</h4>
+                        <p>$20.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-restaurant">
+            <h2>About Us</h2>
+            <p>Since 2010, Nami Sushi has been a cornerstone in the community for offering a truly authentic Japanese dining experience. We pride ourselves on using time-honored techniques and the freshest ingredients sourced both locally and from Japan.</p>
+        </div>
+        <div class="customer-reviews">
+            <h2>Customer Reviews</h2>
+            <div class="review">
+                <p>"An unforgettable sushi experience! Each piece was a work of art." - Jane Doe</p>
+            </div>
+            <div the="review">
+                <p>"The best ramen outside of Japan. The broth was rich and flavorful." - John Smith</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!--adding javascript-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script src="app.js"></script>
+</html>

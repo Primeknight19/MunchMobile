@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Munch Mobile - Restaurant</title>
+    <style>
+
+        .main {
+            width: 100%;
+            height: max-content;
+            min-width: 100px;
+            padding: 2%;
+            background-color: var(--softGreencolor);
+            margin-left: 250px;
+        }
+        .restaurant-hero img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .restaurant-info, .about-restaurant, .customer-reviews {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .menu-highlights {
+        clear: both; 
+        }
+
+        .menu-highlights h2, .restaurant-info h1, .about-restaurant h2, .customer-reviews h2 {
+            color: #d35400;
+            padding-left: 40px;
+        }
+        .highlight-card, .review {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .highlight-card:hover, .review:hover {
+            transform: scale(1.05);
+        }
+        .highlight-wrapper, .customer-reviews {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .highlight-img, .highlight-desc, .review {
+            text-align: center;
+            padding: 15px;
+        }
+        .highlight-img {
+            width: 50%;
+            height: 200px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class = "sidebar">
+        <!--logo-->
+        <h1 class = "logo">MunchTime</h1>
+        <!--list of menu-->
+        <div class = "sidebar-menus">
+            <a href="#"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="#"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+            <a href="#"><ion-icon name="wallet-outline"></ion-icon>Wallet</a>
+            <a href="#"><ion-icon name="notifications-outline"></ion-icon>Notification</a>
+            <a href="#"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a href="#"><ion-icon name="settings-outline"></ion-icon>Setting</a>
+        </div>
+
+        <!--logout-->
+        <div class="sidebar-logout">
+            <a href="#"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="restaurant-hero">
+            <img src="https://images.datagraphs.io/w42st/w42st/6GXTkPjTOcEJVVb7J5pVo3" alt="Featured Indian Restaurant Image">
+        </div>
+        <div class="restaurant-info">
+            <h1>Spice Symphony</h1>
+            <p>Experience the vibrant flavors of India with our traditional and modern dishes, crafted from authentic spices and ingredients.</p>
+            <p><strong>Address:</strong> 5678 ABC Avenue, Spice City, SC 98765</p>
+            <p><strong>Hours:</strong> Monday - Sunday, 10:00 AM to 10:00 PM</p>
+        </div>
+        <div class="menu-highlights">
+            <h2>Featured Dishes</h2>
+            <div class="highlight-wrapper">
+                <div class="highlight-card">
+                    <img class="highlight-img" src="https://littlespicejar.com/wp-content/uploads/2016/02/Finger-Lickin-Butter-Chicken-14-735x1103.jpg" alt="Butter Chicken">
+                    <div class="highlight-desc">
+                        <h4>Butter Chicken</h4>
+                        <p>$15.00</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img class="highlight-img" src="https://www.vegrecipesofindia.com/wp-content/uploads/2021/06/palak-paneer-3.jpg" alt="Palak Paneer">
+                    <div class="highlight-desc">
+                        <h4>Palak Paneer</h4>
+                        <p>$12.00</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img class="highlight-img" src="https://www.cookwithmanali.com/wp-content/uploads/2017/05/Best-Mango-Mango-Lassi-Recipe.jpg" alt="Mango Lassi">
+                    <div class="highlight-desc">
+                        <h4>Mango Lassi</h4>
+                        <p>$8.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-restaurant">
+            <h2>About Us</h2>
+            <p>Founded in 2005, Spice Symphony offers an enchanting dining experience with a blend of traditional Indian recipes and modern culinary delights.</p>
+        </div>
+        <div class="customer-reviews">
+            <h2>Customer Reviews</h2>
+            <div class="review">
+                <p>"A truly authentic taste of India! The Butter Chicken was absolutely sublime. A must-visit!" - Jane Doe       </p>
+            </div>
+            <div class="review">
+                <p>"Incredible service and rich flavors. The Palak Paneer is the best I've had." - John Smith</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!--adding javascript-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script src="app.js"></script>
+</html>

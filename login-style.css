@@ -1,0 +1,73 @@
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    background: #f4f4f4; /* Just to verify that CSS is loading - optional */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Add other specific styles for the login page here */
+
+.login-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 100px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+.form-control label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control input[type="text"],
+.form-control input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form-control input[type="checkbox"]{
+    margin-top: 20px;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0056b3;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004494;
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.message a {
+    color: #0056b3;
+    text-decoration: none;
+}
