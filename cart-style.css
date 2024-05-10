@@ -94,11 +94,15 @@ body{
 	cursor: pointer;
 }
 
+.checkout-button:hover {
+	background-color: var(--softGreencolor);
+}
+
 .detail-img {
-    width: 150px;
-    height: 100%;
-    border-radius: 8px;
-    object-fit: cover;
+	width: 150px;
+	height: 100%;
+	border-radius: 8px;
+	object-fit: cover;
 }
 
 table {
