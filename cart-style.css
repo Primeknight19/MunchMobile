@@ -1,73 +1,84 @@
 :root{
-    --primaryColor: #545bbb;
-    --secondaryColor: #ffc107;
-    --whiteColor: #fff;
-    --blackColor: #222;
-    --softGreencolor: #b2b7fb;
-    --darkGreyColor: #a7a7a7;
-    --greyColor: #f5f5f5;
-
+	--primaryColor: #545bbb;
+	--secondaryColor: #ffc107;
+	--whiteColor: #fff;
+	--blackColor: #222;
+	--softGreencolor: #b2b7fb;
+	--darkGreyColor: #a7a7a7;
+	--greyColor: #f5f5f5;
 }
+
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    font-family: 'Open Sans' sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	font-family: 'Open Sans' sans-serif;
 }
 
 body{
-    width: 100%;
-    height: auto;
-    display: flex;
+	width: 100%;
+	height: auto;
+	display: flex;
 	background-color: var(--softGreencolor);
 }
 
 .main {
-    width: 100%;
-    height: max-content;
-    min-width: 100px;
-    padding: 2%;
-    background-color: var(--softGreencolor);
+	width: 100%;
+	height: max-content;
+	min-width: 100px;
+	padding: 2%;
+	background-color: var(--softGreencolor);
 }
 
 .main-highlight {
-    margin: 5% 0;
-    padding: 2%;
-    background-color: var(--primaryColor);
-    border-radius: 8px;
+	margin-top: 50px;
+	margin-bottom: 30px;
+	height: 75px;
+	padding: 20px;
 	font-size: 20px;
 	font-weight: bold;
 	text-align: center;
 	color: white;
 }
 
-.items {
-    min-height: 100%;
+.item-head {
 	width: 55%;
-    background-color: var(--greyColor);
-    padding: 2%;
-    border-radius: 8px;
-	float: left;
-	margin:10px 0;
+	max-width: 750px;
+	padding: 15px;
+	border-radius: 8px;
+	float: right;
+	margin-right:5%;
+}
+
+.items {
+	max-height: 150px;
+	width: 55%;
+	max-width: 750px;
+	background-color: var(--greyColor);
+	padding: 15px;
+	border-radius: 8px;
+	float: right;
+	margin-top:10px;
+	margin-right:5%;
 }
 
 .sub-total {
-    min-height: 100%;
+	min-height: 100%;
 	width: 30%;
-    background-color: var(--secondaryColor);
-    padding: 3%;
-    border-radius: 8px;
+	background-color: var(--secondaryColor);
+	padding: 3%;
+	border-radius: 8px;
 	float: right;
 	margin: 10px 10% 0 0
 }
 
 .divider {
-    margin: 1rem 0;
-    height: 1px;
-    width: 100%;
-    background-color: var(--primaryColor);
-    border: none;
+	margin: 1rem 0;
+	height: 1px;
+	width: 100%;
+	background-color: var(--primaryColor);
+	border: none;
 }
 
 .checkout-button {
@@ -82,7 +93,7 @@ body{
 }
 
 .detail-img {
-    width: 100%;
+    width: 150px;
     height: 100%;
     border-radius: 8px;
     object-fit: cover;
@@ -95,7 +106,6 @@ table {
 .item-name {
 	color: var(--primaryColor);
 	font-size:20px;
-	
 }
 
 .simple-button {
@@ -107,21 +117,22 @@ table {
 
 .change-num {
 	border-radius:100%; 
-	font-size:2vmax;
 	cursor: pointer;
 	width: 25%;
 	background-color: white;
+	height: 30px;
+	width: 30px;
 }
 
 .user {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--whiteColor);
-    font-size: 20px;
-    color: var(--primaryColor);
-    text-decoration: none;
-    padding: 0 10px;
-    height: 40px;
-    border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--whiteColor);
+	font-size: 20px;
+	color: var(--primaryColor);
+	text-decoration: none;
+	padding: 0 10px;
+	height: 40px;
+	border-radius: 50%;
 }
