@@ -36,6 +36,8 @@ body{
 	margin-bottom: 30px;
 	height: 75px;
 	padding: 20px;
+	background-color: var(--primaryColor);
+    	border-radius: 8px;
 	font-size: 20px;
 	font-weight: bold;
 	text-align: center;
