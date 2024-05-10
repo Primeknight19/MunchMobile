@@ -39,7 +39,7 @@
 		</div>
         <!--main menus / order-->
 		<div class="item-head">
-			<h1>My Cart</h1>
+			<h1 id="myCart">My Cart</h1>
 			<br /><br />
 			<button class="simple-button" onClick="window.location.href = 'index.html'">Back to menu</button>
 			<br />
@@ -61,7 +61,7 @@
 				uCart = JSON.parse(localStorage.getItem('cart'));
 				var i = 1;
 				if (uCart.length == 0){
-					document.getElementById("item-area").innerHTML = "<h2 style='color:white'>Your cart is currently empty!</h2>";
+					document.getElementById("myCart").innerHTML = "<h3>Your cart is currently empty!</h3>";
 					document.getElementById("right-area").innerHTML = "";
 				}
 				else{
