@@ -35,19 +35,22 @@
 			<button class="checkout-button">Checkout - $0.00</button>
         </div>		
         <!--main menus / order-->
-		<h1>My Cart</h1>
-		<br /><br />
-		<button class="simple-button" onClick="window.location.href = 'index.html'">Back to menu</button>
-        <div class="items">
+		<div class="item-head">
+			<h1>My Cart</h1>
+			<br /><br />
+			<button class="simple-button" onClick="window.location.href = 'index.html'">Back to menu</button>
+			<br />
+		</div>
+		<div class="items">
 			<table>
 				<tr>
-					<td style="width:20%"><img class="detail-img" src="images/seafood.jpeg"></td>
-					<td style="width:50%; padding-left:20px;"><span class="item-name">Item name</span>
+					<td style="width:20% max-width:100px"><img class="detail-img" src="images/seafood.jpeg"></td>
+					<td style="width:60%; padding-left:20px;"><span class="item-name">Item name</span>
 					<br /><br /><br />
 					<button class="simple-button">Remove</button></td>
-					<td style="width:20%">
+					<td style="width:20%; padding-right:10px;" align="right">
 						<button class="change-num" onClick="subAmount()">-</button>
-						&nbsp;&nbsp;<span id="amountEle" style="font-size:2vmax;">1</span>&nbsp;&nbsp;
+						&nbsp;&nbsp;<span id="amountEle">1</span>&nbsp;&nbsp;
 						<button class="change-num" onClick="addAmount()">+</button>
 					</td>
 					<td style="width:10%">$0.00</td>
