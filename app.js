@@ -1,5 +1,3 @@
-var amount = 1;
-
 // Showing navbar when click menu on mobile view
 const mobile = document.querySelector('.menu-toggle');
 const mobileLink = document.querySelector('.sidebar');
@@ -76,28 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 });
 
-function addToCart() {
-    const form = document.getElementById('addToCartForm');
-    const size = form.size.value;
-    const extras = [];
-    document.querySelectorAll('#addToCartForm input[name="extras"]:checked').forEach(el => extras.push(el.value));
-    const quantity = form.quantity.value;
-
-    const cartItem = {
-        product: "Shrimp Soup",
-        size: size,
-        extras: extras,
-        quantity: parseInt(quantity, 10)
-    };
-
-    // Simulate adding to cart and show confirmation (log to console for testing)
-    console.log("Added to cart:", cartItem);
-    alert("Added to cart:\n" + JSON.stringify(cartItem, null, 2));
-    
-    // Close modal after adding to cart
-    document.getElementById('shrimpSoupModal').style.display = 'none';
-}
-
 let cart = [];
 
 function addToCart() {
@@ -116,6 +92,7 @@ function addToCart() {
     };
 
     cart.push(cartItem);
+    document.getElementById('shrimpSoupModal').style.display = 'none';
     updateCartUI();
 }
 
@@ -125,13 +102,6 @@ function calculatePrice(size, extras, quantity) {
     if (size === 'large') basePrice += 30;
     let extrasPrice = extras.length * 5; // Assume each extra costs $5
     return (basePrice + extrasPrice) * quantity;
-}
-
-function updateCartUI() {
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
-
-    document.getElementById('cartSummary').textContent = `Items in Cart: ${totalItems} Total Price: $${totalPrice.toFixed(2)}`;
 }
 
 function updateCartUI() {
@@ -193,20 +163,50 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 });
 
 // Increment and decrement functions for cart items
-function addAmount(){
+function addAmount(i){
 	// Increment order amount
+	amount = document.getElementById("amountEle"+i).innerHTML;
 	amount++;
-	var numberSpan = document.getElementById("amountEle");
+	var numberSpan = document.getElementById("amountEle"+i);
 	numberSpan.innerHTML = amount;
+	updateTotal(i, amount);
 }
 
-function subAmount(){
+function subAmount(i){
+	amount = document.getElementById("amountEle"+i).innerHTML;
 	if(amount == 1){
 	}
 	else{
 		// Decrement order amount
 		amount--;
-		var numberSpan = document.getElementById("amountEle");
+		var numberSpan = document.getElementById("amountEle"+i);
 		numberSpan.innerHTML = amount;
+		updateTotal(i, amount);
 	}
 }
+
+function removeItem(i){
+	document.getElementById('item'+i).style.display = 'none';
+	rCart = JSON.parse(localStorage.getItem('cart'));
+	rCartLength = rCart.length;
+	rCart = rCart.filter(function(item){
+		return item !== rCart.at(i-1)
+	});	
+	localStorage.clear();
+	localStorage.setItem('cart', JSON.stringify(rCart));
+	updateCart();
+	updateSubTotal();
+	rCart = JSON.parse(localStorage.getItem('cart'));
+}
+
+function updateTotal(i, amount){
+	uCart = JSON.parse(localStorage.getItem('cart'));
+	uCart.at(i-1).quantity = amount;
+	uCart.at(i-1).price = calculatePrice(uCart.at(i-1).size,uCart.at(i-1).extras,uCart.at(i-1).quantity);
+	document.getElementById("itemPrice"+i).innerHTML = "$"+uCart.at(i-1).price.toFixed(2);
+	localStorage.clear();
+	localStorage.setItem('cart', JSON.stringify(uCart));
+	uCart = JSON.parse(localStorage.getItem('cart'));
+	updateSubTotal();
+}
+
