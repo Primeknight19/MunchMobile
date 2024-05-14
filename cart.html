@@ -86,11 +86,11 @@
 							+"<table>"
 								+"<tr>"
 									+"<td style='width:20% max-width:100px'><img class='detail-img' src='"+element.image+"'></td>"
-									+"<td style='width:40%; padding-left:20px;'><span class='item-name'>"+element.product+"</span>"
+									+"<td style='width:60%; padding-left:20px;'><span class='item-name'>"+element.product+"</span>"
 									+"<br />"+toCaptial(element.size)
 									+toCaptial(element.extras)+"<br /><br />"
 									+"<span id='removeID"+i+"'><button class='simple-button' onClick='removeItem("+i+")'>Remove</button></span></td>"
-									+"<td style='width:40%; padding-right:10px;' align='right'>"
+									+"<td style='width:20%; min-width:100px; padding-right:10px;' align='right'>"
 										+"<button class='change-num' onClick='subAmount("+i+")'>-</button>"
 										+"&nbsp;&nbsp;<span id='amountEle"+i+"'>"+element.quantity+"</span>&nbsp;&nbsp;"
 										+"<button class='change-num' onClick='addAmount("+i+")'>+</button>"
