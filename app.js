@@ -50,12 +50,12 @@ $(".next-menus").on("click", function(e) {
 
 document.addEventListener('DOMContentLoaded', function() {
     const modals = {
-        shrimpSoupModal: document.getElementById("shrimpSoupModal"),
-        pizzaModal: document.getElementById("pizzaModal"),
-        doubleCheeseBurgerModal: document.getElementById("doubleCheeseBurgerModal"),
-        wineModal: document.getElementById("wineModal"),
-        hotCafeLatteModal: document.getElementById("hotCafeLatteModal"),
-        freshSaladModal: document.getElementById("freshSaladModal")
+        shrimpSoupModal: document.getElementById("ShrimpSoupModal"),
+        pizzaModal: document.getElementById("PizzaModal"),
+        doubleCheeseBurgerModal: document.getElementById("DoubleCheeseBurgerModal"),
+        wineModal: document.getElementById("WineModal"),
+        hotCafeLatteModal: document.getElementById("HotCafeLatteModal"),
+        freshSaladModal: document.getElementById("FreshSaladModal")
     };
 
     const buttons = {
@@ -151,9 +151,9 @@ function addToCart(product) {
     console.log(formId, form); // Debugging
 
     if (form) {
-        const size = form.querySelector('select[name="size"]').value;
+        const size = form.size.value;
         const extras = Array.from(form.querySelectorAll('input[name="extras"]:checked')).map(el => el.value);
-        const quantity = parseInt(form.querySelector('input[name="quantity"]').value, 10);
+        const quantity = parseInt(form.quantity.value, 10);
         const price = calculatePrice(product, size, extras, quantity);
 
         const cartItem = {
@@ -168,13 +168,6 @@ function addToCart(product) {
         console.log(cartItem); // Debugging
         cart.push(cartItem);
         saveCart(); // Save the cart to localStorage
-        const modalId = `${product.replace(/\s/g, '').toLowerCase()}Modal`;
-        const modal = document.getElementById(modalId);
-        if (modal) {
-            modal.style.display = 'none';
-        } else {
-            console.error(`Modal with ID ${modalId} not found.`);
-        }
         updateCartUI();
     } else {
         console.error(`Form with ID ${formId} not found.`);
@@ -388,7 +381,7 @@ function removeItem(i){
 function updateTotal(i, amount){
     uCart = JSON.parse(localStorage.getItem('cart'));
     uCart.at(i-1).quantity = amount;
-    uCart.at(i-1).price = calculatePrice(uCart.at(i-1).size,uCart.at(i-1).extras,uCart.at(i-1).quantity);
+    uCart.at(i-1).price = calculatePrice(uCart.at(i-1).product,uCart.at(i-1).size,uCart.at(i-1).extras,uCart.at(i-1).quantity);
     document.getElementById("itemPrice"+i).innerHTML = "$"+uCart.at(i-1).price.toFixed(2);
     localStorage.clear();
     localStorage.setItem('cart', JSON.stringify(uCart));
