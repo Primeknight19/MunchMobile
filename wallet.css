@@ -1,0 +1,136 @@
+:root {
+    --primaryColor: #545bbb;
+    --secondaryColor: #ffc107;
+    --whiteColor: #fff;
+    --blackColor: #222;
+    --softGreencolor: #b2b7fb;
+    --darkGreyColor: #a7a7a7;
+    --greyColor: #f5f5f5;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--softGreencolor);
+    color: var(--blackColor);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.wallet-container {
+    background-color: var(--whiteColor);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    position: relative;
+}
+
+.return-menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.return-button {
+    
+    color: var(--blackColor);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.return-button:hover {
+    color: var(--secondaryColor);
+}
+
+.wallet-title {
+    text-align: center;
+    color: var(--primaryColor);
+    margin-top: 40px;
+}
+
+.wallet-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.balance-card {
+    background-color: var(--softGreencolor);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.balance-card h2 {
+    margin: 0;
+    color: var(--primaryColor);
+}
+
+.balance-card p {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--blackColor);
+}
+
+.recent-transactions {
+    background-color: var(--whiteColor);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.recent-transactions h2 {
+    margin: 0 0 10px;
+    color: var(--primaryColor);
+}
+
+.recent-transactions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recent-transactions li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--darkGreyColor);
+}
+
+.recent-transactions li:last-child {
+    border-bottom: none;
+}
+
+.transaction-date {
+    color: var(--darkGreyColor);
+}
+
+.transaction-description {
+    flex: 1;
+    text-align: center;
+}
+
+.transaction-amount {
+    font-weight: bold;
+}
+
+.wallet-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.action-button {
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
