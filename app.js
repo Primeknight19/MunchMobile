@@ -168,6 +168,7 @@ function addToCart(product) {
         console.log(cartItem); // Debugging
         cart.push(cartItem);
         saveCart(); // Save the cart to localStorage
+        document.getElementById(product.replace(/\s/g, '')+'Modal').style.display = 'none';
         updateCartUI();
     } else {
         console.error(`Form with ID ${formId} not found.`);
