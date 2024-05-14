@@ -178,7 +178,7 @@ body{
     overflow-x: hidden;
 }
 
-.highlight-card {
+.highlight-card a {
     display: flex;
     flex-direction: row;
     min-width: 200px;
@@ -186,14 +186,14 @@ body{
     height: 100%;
     gap: 1rem;
     border-radius: 8px;
-    padding: 1%;
+    padding: 8%;
     background-color: var(--greyColor);
     cursor: pointer;
 }
 
 .highlight-img {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 8px;
     object-fit: cover;
     object-position: center;
@@ -208,7 +208,7 @@ body{
     font-size: 13px;
 }
 
-.highlight-card:hover {
+.highlight-card a:hover {
     background-color: var(--whiteColor);
     box-shadow: rgba(176, 176, 176, 0.2) 0px 2px 8px 0px;
 }
