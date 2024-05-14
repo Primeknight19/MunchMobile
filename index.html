@@ -54,7 +54,7 @@
         <div  class="main-highlight">
             <!--title section and arrow-->
             <div class="main-header">
-                <h2 class="main-title">Recommendations</h2>
+                <h2 class="main-title">Recommended Restaurants</h2>
                 <div class="main-arrow">
                     <ion-icon class="back" name="chevron-back-circle-outline"></ion-icon>
                     <ion-icon class="next" name="chevron-forward-circle-outline"></ion-icon>
@@ -63,32 +63,94 @@
             <!--highlight menu-->
             <div class="highlight-wrapper">
                 <div class="highlight-card">
-                    <img class="highlight-img" src="images/salad.jpeg">
-                    <div class="highlight-desc">
-                        <h4>Fresh Salad</h4>
-                        <p>$42.50</p>
-                    </div>
+                    <a href="restaurant1.html" style="display: flex; align-items: center; text-decoration: none;">
+                        <img class="highlight-img" src="images/salad.jpeg">
+                        <div class="highlight-desc">                  
+                            <h4>La Bella Italiano</h4>
+                            <p></p>
+                        </div>
+                    </a>
                 </div>
                 <div class="highlight-card">
-                    <img class="highlight-img" src="images/coffee.jpeg"> 
-                    <div class="highlight-desc">
-                        <h4>Cafe Latte</h4>
-                        <p>$20.00</p>
-                    </div>
+                    <a href="restaurant2.html" style="display: flex; align-items: center; text-decoration: none;">
+                        <img class="highlight-img" src="images/coffee.jpeg"> 
+                        <div class="highlight-desc">
+                            <h4>Bistro Parisien</h4>
+                            <p></p>
+                        </div>
+                    </a>
                 </div>
                 <div class="highlight-card">
-                    <img class="highlight-img" src="images/steak.jpeg">
-                    <div class="highlight-desc">
-                        <h4>Premium Steak</h4>
-                        <p>$140.00</p>
-                    </div>
+                    <a href="restaurant3.html" style="display: flex; align-items: center; text-decoration: none;">
+                        <img class="highlight-img" src="images/steak.jpeg">
+                        <div class="highlight-desc">
+                            <h4>Spice Symphony</h4>
+                            <p></p>
+                        </div>
+                    </a>
                 </div>
                 <div class="highlight-card">
-                    <img class="highlight-img" src="images/burger.jpeg">
-                    <div class="highlight-desc">
-                        <h4>Big Burger</h4>
-                        <p>$56.50</p>
-                    </div>
+                    <a href="restaurant4.html" style="display: flex; align-items: center; text-decoration: none;">
+                        <img class="highlight-img" src="images/burger.jpeg">
+                        <div class="highlight-desc">
+                            <h4>Nami Sushi</h4>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="highlight-card">
+                    <a href="restaurant5.html" style="display: flex; align-items: center; text-decoration: none;">
+                        <img class="highlight-img" src="images/burger.jpeg">
+                        <div class="highlight-desc">
+                            <h4>Golden Dragon</h4>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="highlight-card">
+                    <a href="restaurant6.html" style="display: flex; align-items: center; text-decoration: none;">
+                        <img class="highlight-img" src="images/burger.jpeg">
+                        <div class="highlight-desc">
+                            <h4>El Sabroso Maxicano</h4>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="highlight-card">
+                    <a href="restaurant7.html" style="display: flex; align-items: center; text-decoration: none;">
+                        <img class="highlight-img" src="images/burger.jpeg">
+                        <div class="highlight-desc">
+                            <h4>Street Bites</h4>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="highlight-card">
+                    <a href="restaurant8.html" style="display: flex; align-items: center; text-decoration: none;">
+                        <img class="highlight-img" src="images/burger.jpeg">
+                        <div class="highlight-desc">
+                            <h4>Thai Spice Delight</h4>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="highlight-card">
+                    <a href="restaurant9.html" style="display: flex; align-items: center; text-decoration: none;">
+                        <img class="highlight-img" src="images/burger.jpeg">
+                        <div class="highlight-desc">
+                            <h4>Sweet Scoops Icecream</h4>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="highlight-card">
+                    <a href="restaurant10.html" style="display: flex; align-items: center; text-decoration: none;">
+                        <img class="highlight-img" src="images/burger.jpeg">
+                        <div class="highlight-desc">
+                            <h4>Prime Cuts Steakhouse</h4>
+                            <p></p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>  
@@ -229,13 +291,13 @@
             </div>
         </div>
     </div>
-    <!-- Shrimp Soup Modal -->
+<!-- Shrimp Soup Modal -->
 <div id="shrimpSoupModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Shrimp Soup</h2>
         <p>Choose your options for the Shrimp Soup.</p>
-        <form id="addToCartForm">
+        <form id="addToCartFormShrimpSoup">
             <label for="size">Size:</label>
             <select id="size" name="size">
                 <option value="small">Small</option>
@@ -249,17 +311,135 @@
             <label for="spice">Extra Spice</label><br>
             <label for="quantity">Quantity:</label>
             <input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
-            <button type="button" onclick="addToCart()">Add to Cart</button>
+            <button type="button" onclick="addToCart('Shrimp Soup')">Add to Cart</button>
         </form>
-        
+    </div>
+</div>
+
+<!-- Pizza Modal -->
+<div id="pizzaModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Pizza</h2>
+        <p>Choose your options for the Pizza.</p>
+        <form id="addToCartFormPizza">
+            <label for="size">Size:</label>
+            <select id="size" name="size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <label for="extras">Add-ons:</label>
+            <input type="checkbox" id="extraCheese" name="extras" value="extra cheese">
+            <label for="extraCheese">Extra Cheese</label><br>
+            <input type="checkbox" id="pepperoni" name="extras" value="pepperoni">
+            <label for="pepperoni">Pepperoni</label><br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+            <button type="button" onclick="addToCart('Pizza')">Add to Cart</button>
+        </form>
+    </div>
+</div>
+
+<!-- Double Cheese Burger Modal -->
+<div id="doubleCheeseBurgerModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Double Cheese Burger</h2>
+        <p>Choose your options for the Double Cheese Burger.</p>
+        <form id="addToCartFormDoubleCheeseBurger">
+            <label for="size">Size:</label>
+            <select id="size" name="size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <label for="extras">Add-ons:</label>
+            <input type="checkbox" id="extraBacon" name="extras" value="extra bacon">
+            <label for="extraBacon">Extra Bacon</label><br>
+            <input type="checkbox" id="extraCheese" name="extras" value="extra cheese">
+            <label for="extraCheese">Extra Cheese</label><br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+            <button type="button" onclick="addToCart('Double Cheese Burger')">Add to Cart</button>
+        </form>
+    </div>
+</div>
+
+<!-- Wine Modal -->
+<div id="wineModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Wine</h2>
+        <p>Choose your options for the Wine.</p>
+        <form id="addToCartFormWine">
+            <label for="size">Size:</label>
+            <select id="size" name="size">
+                <option value="glass">Glass</option>
+                <option value="bottle">Bottle</option>
+            </select>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+            <button type="button" onclick="addToCart('Wine')">Add to Cart</button>
+        </form>
+    </div>
+</div>
+
+<!-- Hot Cafe Latte Modal -->
+<div id="hotCafeLatteModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Hot Cafe Latte</h2>
+        <p>Choose your options for the Hot Cafe Latte.</p>
+        <form id="addToCartFormHotCafeLatte">
+            <label for="size">Size:</label>
+            <select id="size" name="size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <label for="extras">Add-ons:</label>
+            <input type="checkbox" id="extraShot" name="extras" value="extra shot">
+            <label for="extraShot">Extra Shot</label><br>
+            <input type="checkbox" id="whippedCream" name="extras" value="whipped cream">
+            <label for="whippedCream">Whipped Cream</label><br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+            <button type="button" onclick="addToCart('Hot Cafe Latte')">Add to Cart</button>
+        </form>
+    </div>
+</div>
+
+<!-- Fresh Salad Modal -->
+<div id="freshSaladModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Fresh Salad</h2>
+        <p>Choose your options for the Fresh Salad.</p>
+        <form id="addToCartFormFreshSalad">
+            <label for="size">Size:</label>
+            <select id="size" name="size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <label for="extras">Add-ons:</label>
+            <input type="checkbox" id="croutons" name="extras" value="croutons">
+            <label for="croutons">Croutons</label><br>
+            <input type="checkbox" id="extraDressing" name="extras" value="extra dressing">
+            <label for="extraDressing">Extra Dressing</label><br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+            <button type="button" onclick="addToCart('Fresh Salad')">Add to Cart</button>
+        </form>
     </div>
 </div>
 
 </body>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 <!--adding javascript-->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="app.js"></script>
 </html>
