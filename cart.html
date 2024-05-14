@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,77 +10,92 @@
 <body>
     <!--main-->
     <div class="main">
-        <span style="float:left"><h1 style="color: var(--whiteColor);">MunchTime</h1></span>
-        <span style="float:right">
-            <div class="profile">
-                <a class="user" href="#" title="Profile">
-                    <ion-icon name="person-outline"></ion-icon>
-                </a>
-            </div>
-        </span>
+	<span style="float:left"><h1 style="color: var(--whiteColor);">MunchTime</h1></span>
+	<span style="float:right">
+		<div class="profile">
+			<a class="user" href="#" title="Profile">
+				<ion-icon name="person-outline"></ion-icon>
+			</a>
+		</div>
+	</span>
         <!--main highlight-->
         <div  class="main-highlight">
-            <ion-icon name="location-outline"></ion-icon> Delivering to: Street, Town, State
+			<ion-icon name="location-outline"></ion-icon> Delivering to: Street, Town, State
         </div>
-        <div id="right-area">
-            <div class="sub-total">
-                <h2 class="main-title">0 Items</h2>
-                <br />
-                <span style="float:left">Subtotal</span>
-                <span style="float:right" id="subtotal">$0</span>
-                <br />
-                <hr class="divider">
-                <span style="float:left">Delivery Fee</span>
-                <span style="float:right">$8.00</span>
-                <br />
-                <hr class="divider">
-                <button class="checkout-button" id="checkout">Checkout - $0.00</button>
-            </div>
-        </div>
+		<div id="right-area">
+			<div class="sub-total">
+				<h2 class="main-title">0 Items</h2>
+				<br />
+				<span style="float:left">Subtotal</span>
+				<span style="float:right" id="subtotal">$0</span>
+				<br />
+				<hr class="divider">
+				<span style="float:left">Delivery Fee</span>
+				<span style="float:right">$8.00</span>
+				<br />
+				<hr class="divider">
+				<button class="checkout-button" id="checkout">Checkout - $0.00</button>
+			</div>
+		</div>
         <!--main menus / order-->
-        <div class="item-head">
-            <h1 id="myCart">My Cart</h1>
-            <br /><br />
-            <button class="simple-button" onClick="window.location.href = 'index.html'">Back to menu</button>
-            <br />
-        </div>
-        <span id="item-area" >
-        </span>
-        <script type="text/javascript">
-            function updateSubTotal(){
-                const uCart = JSON.parse(localStorage.getItem('cart'));
-                let subTotal = 0;
-                for (let i = 0; i < uCart.length; i++) {
-                    subTotal += uCart[i].price;
-                }
-                document.getElementById("subtotal").innerHTML = "$" + subTotal.toFixed(2);
-                document.getElementById("checkout").innerHTML = "Checkout - $" + (subTotal+8).toFixed(2);
-                document.querySelector(".main-title").innerHTML = uCart.length+" Items";
-            }
-            function updateCart(){
-                const cart = JSON.parse(localStorage.getItem('cart'));
-                let itemArea = document.getElementById("item-area");
-                itemArea.innerHTML = "";
-                for (let i = 0; i < cart.length; i++) {
-                    itemArea.innerHTML += `<div class="item" id="item` + (i + 1) + `">
-                    <span class="item-img"><img class = "detail-img" src="` + cart[i].image + `"></span>
-                    <span class="item-name">` + cart[i].product + `</span>
-                    <span class="item-name">` + cart[i].size + `</span>
-                    <span class="item-quantity" >
-                    <button onClick="subAmount(` + (i + 1) + `)">-</button>
-                    <span id="amountEle` + (i + 1) + `">` + cart[i].quantity + `</span>
-                    <button onClick="addAmount(` + (i + 1) + `)">+</button></span>
-                    <span class="item-price" id="itemPrice` + (i + 1) + `">` + cart[i].price.toFixed(2) + `</span>
-                    <span class="item-remove"><button onClick="removeItem(` + (i + 1) + `)">Remove</button></span>
-                    </div>`;
-                }
-            }
-            document.onload = updateCart();
-            document.onload = updateSubTotal();
-        </script>
+		<div class="item-head">
+			<h1 id="myCart">My Cart</h1>
+			<br /><br />
+			<button class="simple-button" onClick="window.location.href = 'index.html'">Back to menu</button>
+			<br />
+		</div>
+		<span id="item-area" >
+		</span>
+		<script type="text/javascript">
+			function updateSubTotal(){
+				uCart = JSON.parse(localStorage.getItem('cart'));
+				subTotal = 0;
+				for(let i=1; i< uCart.length+1; i++){
+					subTotal += uCart.at(i-1).price;
+				}
+				document.getElementById("subtotal").innerHTML = "$"+subTotal.toFixed(2);
+				document.getElementById("checkout").innerHTML = "Checkout - $"+(subTotal+8).toFixed(2);
+			}
+			function updateCart(){
+				document.getElementById("item-area").innerHTML = "";
+				uCart = JSON.parse(localStorage.getItem('cart'));
+				var i = 1;
+				if (uCart.length == 0){
+					document.getElementById("myCart").innerHTML = "<h3>Your cart is currently empty!</h3>";
+					document.getElementById("right-area").innerHTML = "";
+				}
+				else{
+					for (const element of uCart){
+						document.getElementById("item-area").innerHTML +="<div class='items' id=item"+i+">"
+							+"<table>"
+								+"<tr>"
+									+"<td style='width:20% max-width:100px'><img class='detail-img' src='"+element.image+"'></td>"
+									+"<td style='width:40%; padding-left:20px;'><span class='item-name'>"+element.product+"</span>"
+									+"<br /><br /><br />"
+									+"<span id='removeID"+i+"'><button class='simple-button' onClick='removeItem("+i+")'>Remove</button></span></td>"
+									+"<td style='width:40%; padding-right:10px;' align='right'>"
+										+"<button class='change-num' onClick='subAmount("+i+")'>-</button>"
+										+"&nbsp;&nbsp;<span id='amountEle"+i+"'>"+element.quantity+"</span>&nbsp;&nbsp;"
+										+"<button class='change-num' onClick='addAmount("+i+")'>+</button>"
+									+"</td>"
+									+"<td style='width:10%' id='itemPrice"+i+"'>$"+(element.price).toFixed(2)+"</td>"
+								+"</tr>"
+							+"</table>"
+							+"<span style='float:left'></span>"
+						+"</div>";
+						i++;
+					}
+				}
+			}
+			updateCart();
+			updateSubTotal();
+		</script>
     </div>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="app.js"></script>
 </body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<!--adding javascript-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="app.js"></script>
+
 </html>
