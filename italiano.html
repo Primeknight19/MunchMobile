@@ -1,0 +1,185 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Munch Mobile - La Bella Italiano</title>
+</head>
+<body>
+    <!--sidebar-->
+    <div class = "sidebar">
+        <!--logo-->
+        <h1 class = "logo">MunchTime</h1>
+        <!--list of menu-->
+        <div class = "sidebar-menus">
+            <a href="index.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="#"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+            <a href="wallet.html"><ion-icon name="wallet-outline"></ion-icon>Wallet</a>
+            <a href="#"><ion-icon name="notifications-outline"></ion-icon>Notification</a>
+            <a href="#"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a href="#"><ion-icon name="settings-outline"></ion-icon>Setting</a>
+        </div>
+
+        <!--logout-->
+        <div class="sidebar-logout">
+            <a href="startup.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>
+    </div>
+    <!--main-->
+    <div class="main">
+        <!--main navbar-->
+        <div class="main-navbar">
+            <!--menu when appear on mobile version-->
+            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+            <!--search bar-->
+            <!--cart summary-->
+            <div id="cartSummary" style="width:100%; text-align:right; margin-right:20px">No items in cart</div>
+            <!--profile icon on left side of navbar-->
+            <div class="profile">
+                <a class="cart" href="#" title="View Cart" onClick="window.location.href = 'cart.html'">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <span id="itemCount" class="item-count-badge">0</span>
+                </a>
+            </div>
+        </div>
+        <div class="restaurant-hero">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="Featured Restaurant Image">
+        </div>
+		<div class="main-highlight" style="text-align:center">
+            <h1>La Bella Italiano</h1>
+            <p>Experience the taste of Italy with our traditional and contemporary dishes, crafted from the finest ingredients.</p>
+            <p><strong>Address:</strong> 1234 Pasta Lane, Foodie City, FC 56789</p>
+            <p><strong>Hours:</strong> Monday - Sunday, 11:00 AM to 11:00 PM</p>
+        </div>
+        <!--main menus / order-->
+        <div class="main-menus">
+            <!--list of food menus-->
+            <div class="main-detail">
+                <h2 class="main-title">Choose Order</h2>
+                <div class="detail-wrapper">
+                    <div class="detail-card">
+                        <img class="detail-img" src="https://images.unsplash.com/photo-1551443874-e8d6a8e561aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Signature Lasagna</h4><br />
+                                <p class="price">$32.60</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <img class="detail-img" src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Caprese Salad</h4><br />
+                                <p class="price">$12.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+					<div class="detail-card">
+                        <img class="detail-img" src="https://images.unsplash.com/photo-1543353071-873f17a7a088?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Classic Tiramisu</h4><br />
+                                <p class="price">$10.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="main-highlight" style="text-align:center">
+            <h2>About Us</h2>
+            <p>Founded in 1998, La Bella Italiano has been serving a vibrant ambiance and a rich menu that blends traditional Italian recipes with modern culinary innovations.</p>
+        </div>
+        <div class="main-highlight" style="text-align:center">
+            <h2>Customer Reviews</h2>
+            <div class="review">
+                <p>"Absolutely delightful experience! The best Italian cuisine in town. The lasagna is a must-try!" - Jane Doe</p>
+            </div>
+            <div class="review">
+                <p>"Fantastic service and unforgettable flavors. Highly recommend their Tiramisu for dessert." - John Smith</p>
+            </div>
+        </div>
+		<br />
+    </div>
+	<div id="SignatureLasagnaModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Signature Lasagna</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormSignatureLasagna">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Signature Lasagna')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="CapreseSaladModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Caprese Salad</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormCapreseSalad">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Caprese Salad')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="ClassicTiramisuModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Shrimp Soup</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormClassicTiramisu">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Classic Tiramisu')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+<!--adding javascript-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="app.js"></script>
+</html>
