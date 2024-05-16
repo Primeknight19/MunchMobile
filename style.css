@@ -18,8 +18,10 @@
 
 body{
     width: 100%;
+    min-height: 100%;
     height: auto;
     display: flex;
+	background-color: var(--softGreencolor);
 }
 
 .sidebar{
@@ -64,11 +66,11 @@ body{
 
 .main {
     width: 100%;
-    height: max-content;
     min-width: 100px;
     padding: 2%;
     background-color: var(--softGreencolor);
     margin-left: 250px;
+	height: 100%;
 }
 
 .main-navbar {
@@ -214,10 +216,12 @@ body{
 }
 
 .main-menus {
-    min-height: 100%;
+    height: auto;
+	max-height: 700px;
     background-color: var(--greyColor);
     padding: 2%;
     border-radius: 8px;
+	overflow-y: auto;
 }
 
 .main-filter {
@@ -308,7 +312,7 @@ body{
 .detail-card {
     flex: 0 1 32%;
     margin-bottom: 20px;
-    min-height: 280px;
+    min-height: 220px;
     height: 100%;
     background-color: var(--whiteColor);
     border-radius: 8px;
@@ -480,4 +484,29 @@ body{
     display: block;
 }
 
-/* Reset margins and padding */
+.restaurant-hero img {
+	width: 100%;
+	height: auto;
+	max-height: 600px;
+	border-radius: 5px;
+	margin: auto;
+	object-fit: cover;
+	padding: 10px;
+}
+
+.review {
+	background-color: var(--primaryColor);
+	color: white;
+	border-radius: 8px;
+	margin-top: 20px;
+	transition: transform 0.3s ease-in-out;
+	cursor: pointer;
+	text-align: center;
+	padding: 15px;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+}
+.review:hover {
+	transform: scale(1.05);
+}
