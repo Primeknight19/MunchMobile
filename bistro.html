@@ -1,0 +1,185 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Munch Mobile - Bistro Parisien</title>
+</head>
+<body>
+    <!--sidebar-->
+    <div class = "sidebar">
+        <!--logo-->
+        <h1 class = "logo">MunchTime</h1>
+        <!--list of menu-->
+        <div class = "sidebar-menus">
+            <a href="index.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="#"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+            <a href="wallet.html"><ion-icon name="wallet-outline"></ion-icon>Wallet</a>
+            <a href="#"><ion-icon name="notifications-outline"></ion-icon>Notification</a>
+            <a href="#"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a href="#"><ion-icon name="settings-outline"></ion-icon>Setting</a>
+        </div>
+
+        <!--logout-->
+        <div class="sidebar-logout">
+            <a href="startup.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>
+    </div>
+    <!--main-->
+    <div class="main">
+        <!--main navbar-->
+        <div class="main-navbar">
+            <!--menu when appear on mobile version-->
+            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+            <!--search bar-->
+            <!--cart summary-->
+            <div id="cartSummary" style="width:100%; text-align:right; margin-right:20px">No items in cart</div>
+            <!--profile icon on left side of navbar-->
+            <div class="profile">
+                <a class="cart" href="#" title="View Cart" onClick="window.location.href = 'cart.html'">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <span id="itemCount" class="item-count-badge">0</span>
+                </a>
+            </div>
+        </div>
+        <div class="restaurant-hero">
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/0e/3b/df/e2/le-bistro-parisien-terrace.jpg" alt="Featured Restaurant Image">
+        </div>
+		<div class="main-highlight" style="text-align:center">
+            <h1>Bistro Parisien</h1>
+            <p>Découvrez les saveurs de la France avec nos plats traditionnels et contemporains, confectionnés avec les meilleurs ingrédients.</p>
+            <p><strong>Adresse:</strong> 4321 Rue de Paris, Ville Gourmet, VG 98765</p>
+            <p><strong>Heures:</strong> Lundi - Dimanche, 10:00 à 23:00</p>
+        </div>
+        <!--main menus / order-->
+        <div class="main-menus">
+            <!--list of food menus-->
+            <div class="main-detail">
+                <h2 class="main-title">Choose Order</h2>
+                <div class="detail-wrapper">
+                    <div class="detail-card">
+                        <img class="detail-img" src="https://food-images.files.bbci.co.uk/food/recipes/boeuf_bourguignon_25475_16x9.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Boeuf Bourguignon</h4><br />
+                                <p class="price">$24.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <img class="detail-img" src="https://img.buzzfeed.com/video-api-prod/assets/eb44570519264864814264f7f0a5e47a/BFV13909_BakedRatatouille-ThumbTextless1080.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Ratatouille</h4><br />
+                                <p class="price">$18.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+					<div class="detail-card">
+                        <img class="detail-img" src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/tarte-tatin-502b8b9.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Tarte Tatin</h4><br />
+                                <p class="price">$12.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="main-highlight" style="text-align:center">
+            <h2>À Propos de Nous</h2>
+            <p>Fondé en 2000, le Bistro Parisien est reconnu pour son ambiance chaleureuse et un menu riche qui offre un parfait mélange de recettes françaises traditionnelles et d'innovations culinaires modernes.</p>
+        </div>
+        <div class="main-highlight" style="text-align:center">
+            <h2>Avis des Clients</h2>
+            <div class="review">
+                <p>"Une expérience absolument délicieuse! La meilleure cuisine française en ville. Le Boeuf Bourguignon est à essayer absolument!" - Jeanne D.</p>
+            </div>
+            <div class="review">
+                <p>"Service fantastique et saveurs inoubliables. Je recommande vivement leur Tarte Tatin en dessert." - Pierre M.</p>
+            </div>
+        </div>
+		<br />
+    </div>
+	<div id="BoeufBourguignonModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Boeuf Bourguignon</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormBoeufBourguignon">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Boeuf Bourguignon')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="RatatouilleModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Ratatouille</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormRatatouille">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Ratatouille')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="TarteTatinModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Tarte Tatin</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormTarteTatin">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Tarte Tatin')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+<!--adding javascript-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="app.js"></script>
+</html>
