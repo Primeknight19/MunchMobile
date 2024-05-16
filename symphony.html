@@ -1,0 +1,185 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Munch Mobile - Spice Symphony</title>
+</head>
+<body>
+    <!--sidebar-->
+    <div class = "sidebar">
+        <!--logo-->
+        <h1 class = "logo">MunchTime</h1>
+        <!--list of menu-->
+        <div class = "sidebar-menus">
+            <a href="index.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="#"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+            <a href="wallet.html"><ion-icon name="wallet-outline"></ion-icon>Wallet</a>
+            <a href="#"><ion-icon name="notifications-outline"></ion-icon>Notification</a>
+            <a href="#"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a href="#"><ion-icon name="settings-outline"></ion-icon>Setting</a>
+        </div>
+
+        <!--logout-->
+        <div class="sidebar-logout">
+            <a href="startup.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>
+    </div>
+    <!--main-->
+    <div class="main">
+        <!--main navbar-->
+        <div class="main-navbar">
+            <!--menu when appear on mobile version-->
+            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+            <!--search bar-->
+            <!--cart summary-->
+            <div id="cartSummary" style="width:100%; text-align:right; margin-right:20px">No items in cart</div>
+            <!--profile icon on left side of navbar-->
+            <div class="profile">
+                <a class="cart" href="#" title="View Cart" onClick="window.location.href = 'cart.html'">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <span id="itemCount" class="item-count-badge">0</span>
+                </a>
+            </div>
+        </div>
+        <div class="restaurant-hero">
+            <img src="https://images.datagraphs.io/w42st/w42st/6GXTkPjTOcEJVVb7J5pVo3" alt="Featured Restaurant Image">
+        </div>
+		<div class="main-highlight" style="text-align:center">
+            <h1>Spice Symphony</h1>
+            <p>Experience the vibrant flavors of India with our traditional and modern dishes, crafted from authentic spices and ingredients.</p>
+            <p><strong>Address:</strong> 5678 ABC Avenue, Spice City, SC 98765</p>
+            <p><strong>Hours:</strong> Monday - Sunday, 10:00 AM to 10:00 PM</p>
+        </div>
+        <!--main menus / order-->
+        <div class="main-menus">
+            <!--list of food menus-->
+            <div class="main-detail">
+                <h2 class="main-title">Choose Order</h2>
+                <div class="detail-wrapper">
+                    <div class="detail-card">
+                        <img class="detail-img" src="https://littlespicejar.com/wp-content/uploads/2016/02/Finger-Lickin-Butter-Chicken-14-735x1103.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Butter Chicken</h4><br />
+                                <p class="price">$15.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <img class="detail-img" src="https://www.vegrecipesofindia.com/wp-content/uploads/2021/06/palak-paneer-3.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Palak Paneer</h4><br />
+                                <p class="price">$12.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+					<div class="detail-card">
+                        <img class="detail-img" src="https://www.cookwithmanali.com/wp-content/uploads/2017/05/Best-Mango-Mango-Lassi-Recipe.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Mango Lassi</h4><br />
+                                <p class="price">$8.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="main-highlight" style="text-align:center">
+            <h2>About Us</h2>
+            <p>Founded in 2005, Spice Symphony offers an enchanting dining experience with a blend of traditional Indian recipes and modern culinary delights.</p>
+        </div>
+        <div class="main-highlight" style="text-align:center">
+            <h2>Customer Reviews</h2>
+            <div class="review">
+                <p>"A truly authentic taste of India! The Butter Chicken was absolutely sublime. A must-visit!" - Jane Doe       </p>
+            </div>
+            <div class="review">
+                <p>"Incredible service and rich flavors. The Palak Paneer is the best I've had." - John Smith</p>
+            </div>
+        </div>
+		<br />
+    </div>
+	<div id="ButterChickenModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Butter Chicken</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormButterChicken">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Butter Chicken')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="PalakPaneerModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Palak Paneer</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormPalakPaneer">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Palak Paneer')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="MangoLassiModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Mango Lassi</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormMangoLassi">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Mango Lassi')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+<!--adding javascript-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="app.js"></script>
+</html>
