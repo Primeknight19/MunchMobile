@@ -166,124 +166,128 @@
                     </div>
                 </div>
                 <div class="filter-wrapper">
-                    <div class="filter-card">
+                    <div class="filter-card" onClick="showAll()">
                         <div class="filter-icon">
                             <ion-icon name="restaurant-outline"></ion-icon>
                         </div>
                         <p>All Menus</p>
                     </div>
-                    <div class="filter-card">
+                    <div class="filter-card" onClick="hideAll('western')">
                         <div class="filter-icon">
                             <ion-icon name="fast-food-outline"></ion-icon>
                         </div>
-                        <p>Burger</p>
+                        <p>Western</p>
                     </div>
-                    <div class="filter-card">
+                    <div class="filter-card" onClick="hideAll('italian')">
                         <div class="filter-icon">
                             <ion-icon name="pizza-outline"></ion-icon>
                         </div>
-                        <p>Pizza</p>
+                        <p>Italian</p>
                     </div>
-                    <div class="filter-card">
+                    <div class="filter-card" onClick="hideAll('mexican')">
                         <div class="filter-icon">
-                            <ion-icon name="wine-outline"></ion-icon>
+                            <ion-icon name="skull-outline"></ion-icon>
                         </div>
-                        <p>Wine</p>
+                        <p>Mexican</p>
                     </div>
-                    <div class="filter-card">
+                    <div class="filter-card" onClick="hideAll('icecream')">
                         <div class="filter-icon">
                             <ion-icon name="ice-cream-outline"></ion-icon>
                         </div>
                         <p>Ice Cream</p>
                     </div>
-                    <div class="filter-card">
+                    <div class="filter-card" onClick="hideAll('cafe')">
                         <div class="filter-icon">
                             <ion-icon name="cafe-outline"></ion-icon>
                         </div>
-                        <p>Coffee</p>
+                        <p>Cafe</p>
                     </div>
-                    <div class="filter-card">
+                    <div class="filter-card" onClick="hideAll('asian')">
                         <div class="filter-icon">
                             <ion-icon name="fish-outline"></ion-icon>
                         </div>
-                        <p>Seafood</p>
+                        <p>Asian</p>
                     </div>
-                    <div class="filter-card">
+                    <div class="filter-card" onClick="hideAll('indian')">
                         <div class="filter-icon">
                             <ion-icon name="nutrition-outline"></ion-icon>
                         </div>
-                        <p>Healthy</p>
+                        <p>Indian</p>
                     </div>
                 </div>
             </div>
             <hr class="divider">
             <!--list of food menus-->
             <div class="main-detail">
-                <h2 class="main-title">Choose Order</h2>
+                <h2 class="main-title">Choose Restaurant</h2>
                 <div class="detail-wrapper">
-                    <div class="detail-card">
-                        <img class="detail-img" src="images/seafood.jpeg">
-                        <div class="detail-desc">
-                            <div class="detail-name">
-                                <h4>Shrimp Soup</h4>
-                                <p class="detail-sub">Lorem ipsum dolor sit amet consectetur provident doloremque minima</p>
-                                <p class="price">$147.00</p>
-                            </div>
-                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="detail-card">
-                        <img class="detail-img" src="images/pizza.jpeg">
-                        <div class="detail-desc">
-                            <div class="detail-name">
-                                <h4>Pizza</h4>
-                                <p class="detail-sub">Autem nam repellendus perferendis enim eum provident</p>
-                                <p class="price">$34.00</p>
-                            </div>
-                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="detail-card">
-                        <img class="detail-img" src="images/wine.jpeg">
-                        <div class="detail-desc">
-                            <div class="detail-name">
-                                <h4>Wine</h4>
-                                <p class="detail-sub">Illum officia porro amet consectatur adipisicing facilis eum eveniet</p>
-                                <p class="price">$13.00</p>
-                            </div>
-                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="detail-card">
-                        <img class="detail-img" src="images/burger.jpeg">
-                        <div class="detail-desc">
-                            <div class="detail-name">
-                                <h4>Double Cheese Burger</h4>
-                                <p class="detail-sub">Temporibus at praesentium nisi cumque consectatur dolorem</p>
-                                <p class="price">$23.00</p>
-                            </div>
-                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="detail-card">
+                    <div class="detail-card" id="bistro" onClick="window.location.href = 'bistro.html'">
                         <img class="detail-img" src="images/coffee.jpeg">
                         <div class="detail-desc">
-                            <div class="detail-name">
-                                <h4>Hot Cafe Latte</h4>
-                                <p class="detail-sub">minus ipsa fugiat non at expendita incidunt provident doloremque architecto</p>
-                                <p class="price">$11.50</p>
-                            </div>
+							<h4>Bistro Parisien</h4>
                             <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
                         </div>
                     </div>
-                    <div class="detail-card">
+                    <div class="detail-card" id="mexicano" onClick="window.location.href = 'mexicano.html'">
+                        <img class="detail-img" src="images/mexicano.jpg">
+                        <div class="detail-desc">
+                            <h4>El Sabroso Maxicano</h4>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="detail-card" id="dragon" onClick="window.location.href = 'dragon.html'">
+                        <img class="detail-img" src="images/golden_dragon.jpg">
+                        <div class="detail-desc">
+                            <h4>Golden Dragon</h4>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+					<div class="detail-card" id="italiano" onClick="window.location.href = 'italiano.html'">
+                        <img class="detail-img" src="images/pizza.jpeg">
+                        <div class="detail-desc">
+                            <h4>La Bella Italiano</h4>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="detail-card" id="nami" onClick="window.location.href = 'nami.html'">
+                        <img class="detail-img" src="images/sushi.jpg">
+                        <div class="detail-desc">
+                            <h4>Nami Sushi</h4>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="detail-card" id="steakhouse" onClick="window.location.href = 'steakhouse.html'">
+                        <img class="detail-img" src="images/steak.jpeg">
+                        <div class="detail-desc">
+                            <h4>Prime Cuts Steakhouse</h4>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="detail-card" id="symphony" onClick="window.location.href = 'symphony.html'">
                         <img class="detail-img" src="images/salad.jpeg">
                         <div class="detail-desc">
-                            <div class="detail-name">
-                                <h4>Fresh Salad</h4>
-                                <p class="detail-sub">Corporis accusamus harum alias labore officiis natus</p>
-                                <p class="price">$32.60</p>
-                            </div>
+                            <h4>Spice Symphony</h4>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+					<div class="detail-card" id="bites" onClick="window.location.href = 'bites.html'">
+                        <img class="detail-img" src="images/street_bites.jpg">
+                        <div class="detail-desc">
+                            <h4>Street Bites</h4>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+					<div class="detail-card" id="scoops" onClick="window.location.href = 'scoops.html'">
+                        <img class="detail-img" src="images/ice_cream.jpg">
+                        <div class="detail-desc">
+                            <h4>Sweet Scoops Icecream</h4>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+					<div class="detail-card" id="thai" onClick="window.location.href = 'thai.html'">
+                        <img class="detail-img" src="images/thai_spice.jpg">
+                        <div class="detail-desc">
+                            <h4>Thai Spice Delight</h4>
                             <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
                         </div>
                     </div>
@@ -291,150 +295,6 @@
             </div>
         </div>
     </div>
-<!-- Shrimp Soup Modal -->
-<div id="ShrimpSoupModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Shrimp Soup</h2>
-        <p>Choose your options for the Shrimp Soup.</p>
-        <form id="addToCartFormShrimpSoup">
-            <label for="size">Size:</label>
-            <select id="size" name="size">
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-            </select>
-            <label for="extras">Add-ons:</label>
-            <input type="checkbox" id="crackers" name="extras" value="crackers">
-            <label for="crackers">Extra Crackers</label><br>
-            <input type="checkbox" id="spice" name="extras" value="spice">
-            <label for="spice">Extra Spice</label><br>
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
-            <button type="button" onclick="addToCart('Shrimp Soup')">Add to Cart</button>
-        </form>
-    </div>
-</div>
-
-<!-- Pizza Modal -->
-<div id="PizzaModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Pizza</h2>
-        <p>Choose your options for the Pizza.</p>
-        <form id="addToCartFormPizza">
-            <label for="size">Size:</label>
-            <select id="size" name="size">
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-            </select>
-            <label for="extras">Add-ons:</label>
-            <input type="checkbox" id="extraCheese" name="extras" value="extra cheese">
-            <label for="extraCheese">Extra Cheese</label><br>
-            <input type="checkbox" id="pepperoni" name="extras" value="pepperoni">
-            <label for="pepperoni">Pepperoni</label><br>
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
-            <button type="button" onclick="addToCart('Pizza')">Add to Cart</button>
-        </form>
-    </div>
-</div>
-
-<!-- Double Cheese Burger Modal -->
-<div id="DoubleCheeseBurgerModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Double Cheese Burger</h2>
-        <p>Choose your options for the Double Cheese Burger.</p>
-        <form id="addToCartFormDoubleCheeseBurger">
-            <label for="size">Size:</label>
-            <select id="size" name="size">
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-            </select>
-            <label for="extras">Add-ons:</label>
-            <input type="checkbox" id="extraBacon" name="extras" value="extra bacon">
-            <label for="extraBacon">Extra Bacon</label><br>
-            <input type="checkbox" id="extraCheese" name="extras" value="extra cheese">
-            <label for="extraCheese">Extra Cheese</label><br>
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
-            <button type="button" onclick="addToCart('Double Cheese Burger')">Add to Cart</button>
-        </form>
-    </div>
-</div>
-
-<!-- Wine Modal -->
-<div id="WineModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Wine</h2>
-        <p>Choose your options for the Wine.</p>
-        <form id="addToCartFormWine">
-            <label for="size">Size:</label>
-            <select id="size" name="size">
-                <option value="glass">Glass</option>
-                <option value="bottle">Bottle</option>
-            </select>
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
-            <button type="button" onclick="addToCart('Wine')">Add to Cart</button>
-        </form>
-    </div>
-</div>
-
-<!-- Hot Cafe Latte Modal -->
-<div id="HotCafeLatteModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Hot Cafe Latte</h2>
-        <p>Choose your options for the Hot Cafe Latte.</p>
-        <form id="addToCartFormHotCafeLatte">
-            <label for="size">Size:</label>
-            <select id="size" name="size">
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-            </select>
-            <label for="extras">Add-ons:</label>
-            <input type="checkbox" id="extraShot" name="extras" value="extra shot">
-            <label for="extraShot">Extra Shot</label><br>
-            <input type="checkbox" id="whippedCream" name="extras" value="whipped cream">
-            <label for="whippedCream">Whipped Cream</label><br>
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
-            <button type="button" onclick="addToCart('Hot Cafe Latte')">Add to Cart</button>
-        </form>
-    </div>
-</div>
-
-<!-- Fresh Salad Modal -->
-<div id="FreshSaladModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Fresh Salad</h2>
-        <p>Choose your options for the Fresh Salad.</p>
-        <form id="addToCartFormFreshSalad">
-            <label for="size">Size:</label>
-            <select id="size" name="size">
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-            </select>
-            <label for="extras">Add-ons:</label>
-            <input type="checkbox" id="croutons" name="extras" value="croutons">
-            <label for="croutons">Croutons</label><br>
-            <input type="checkbox" id="extraDressing" name="extras" value="extra dressing">
-            <label for="extraDressing">Extra Dressing</label><br>
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
-            <button type="button" onclick="addToCart('Fresh Salad')">Add to Cart</button>
-        </form>
-    </div>
-</div>
-
 </body>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 
