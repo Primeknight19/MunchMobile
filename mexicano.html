@@ -1,0 +1,185 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Munch Mobile - El Sabroso Mexicano</title>
+</head>
+<body>
+    <!--sidebar-->
+    <div class = "sidebar">
+        <!--logo-->
+        <h1 class = "logo">MunchTime</h1>
+        <!--list of menu-->
+        <div class = "sidebar-menus">
+            <a href="index.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="#"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+            <a href="wallet.html"><ion-icon name="wallet-outline"></ion-icon>Wallet</a>
+            <a href="#"><ion-icon name="notifications-outline"></ion-icon>Notification</a>
+            <a href="#"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a href="#"><ion-icon name="settings-outline"></ion-icon>Setting</a>
+        </div>
+
+        <!--logout-->
+        <div class="sidebar-logout">
+            <a href="startup.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>
+    </div>
+    <!--main-->
+    <div class="main">
+        <!--main navbar-->
+        <div class="main-navbar">
+            <!--menu when appear on mobile version-->
+            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+            <!--search bar-->
+            <!--cart summary-->
+            <div id="cartSummary" style="width:100%; text-align:right; margin-right:20px">No items in cart</div>
+            <!--profile icon on left side of navbar-->
+            <div class="profile">
+                <a class="cart" href="#" title="View Cart" onClick="window.location.href = 'cart.html'">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <span id="itemCount" class="item-count-badge">0</span>
+                </a>
+            </div>
+        </div>
+        <div class="restaurant-hero">
+            <img src="https://zast-foods.com/wp-content/uploads/2018/10/el-sabroso-mexicano.jpg" alt="Featured Restaurant Image">
+        </div>
+		<div class="main-highlight" style="text-align:center">
+            <h1>El Sabroso Mexicano</h1>
+            <p>Experience the vibrant flavors of Mexico with our authentic and delicious dishes, made with the freshest ingredients.</p>
+            <p><strong>Address:</strong> 5678 Taco Street, Salsa City, SC 12345</p>
+            <p><strong>Hours:</strong> Monday - Sunday, 11:00 AM to 10:00 PM</p>
+        </div>
+        <!--main menus / order-->
+        <div class="main-menus">
+            <!--list of food menus-->
+            <div class="main-detail">
+                <h2 class="main-title">Choose Order</h2>
+                <div class="detail-wrapper">
+                    <div class="detail-card">
+                        <img class="detail-img" src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/2/29/0/0149359_Making-Taco_s4x3.jpg.rend.hgtvcom.1280.960.suffix/1371603491866.jpeg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Tacos</h4><br />
+                                <p class="price">$8.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <img class="detail-img" src="https://www.seriouseats.com/thmb/lOdEqFZsV3LOzX5Pc2Y6XCJuvTs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2020__10__20201002-mission-style-burrito-jillian-atkinson-2-6841455590ed4c3981529b232166643a.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Mexican Burrito</h4><br />
+                                <p class="price">$10.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+					<div class="detail-card">
+                        <img class="detail-img" src="https://www.mccormick.com/-/media/project/oneweb/mccormick-us/mccormick/recipe-categories/m/1376x774/mole_poblano_chicken_1376x774.jpg?rev=be4f11cdcbe741c29f1635f48d7c5506&vd=20210922T165012Z&extension=webp&hash=A1E6549E6559FC1F4DBA8FD923D07893">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Mole Poblano</h4><br />
+                                <p class="price">$12.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="main-highlight" style="text-align:center">
+            <h2>About Us</h2>
+            <p>Established in 2005, El Sabroso Mexicano takes pride in offering a genuine taste of Mexico through our diverse menu and warm hospitality.</p>
+        </div>
+        <div class="main-highlight" style="text-align:center">
+            <h2>Customer Reviews</h2>
+            <div class="review">
+                <p>"Absolutely delicious food! The tacos were packed with flavor, and the salsa had just the right amount of kick." - Maria Rodriguez</p>
+            </div>
+            <div class="review">
+                <p>"Amazing experience! The burritos were huge and incredibly tasty. Will definitely be coming back for more!" - Carlos Martinez</p>
+            </div>
+        </div>
+		<br />
+    </div>
+	<div id="TacosModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Tacos</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormTacos">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Tacos')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="MexicanBurritoModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Mexican Burrito</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormMexicanBurrito">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Mexican Burrito')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="MolePoblanoModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Mole Poblano</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormMolePoblano">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Mole Poblano')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+<!--adding javascript-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="app.js"></script>
+</html>
