@@ -3,42 +3,69 @@
     <head>
         <meta charset="UFT-8">
         <title>User Profile- Munch Mobile</title>
-        <link rel="stylesheet" href = "userInfo_styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="userInfo_styles.css"> 
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
-            <h1>Welcome, User!</h1>
+			<div>
+				<h1>Welcome, <span id="username">User</span>!
+				<a class="home" onClick="window.location.href = 'index.html'">
+                    <ion-icon name="storefront-outline"></ion-icon>
+                </a></span></h1>
+			</div>
         </header>
-        <section class = "user-info">
-            <div class = "user-details">
-                <h2>Your Details</h2>
-                <form id="detailsUpdate">
-                    <input type="text" id="name" value="Munch Mobile" required>
-                    <input type="email" id="email" value="munchMobile@info.com" required>
-                    <input type="text" id="phone" value="04XX XXX XXX" required>
-                    <input type="text" id="address" value="UOW, Wollongong NSW 2500" required>
-                    <button type="submit">Update Details</button>
-                </form>
-            </div>
-            <div class = "user-orders">
-                <h2>Your Orders</h2>
-                <ul>
-                    <li>Dish 1- Date</li>
-                    <li>Dish 2- Date</li>
-                    <li>Dish 3- Date</li>
-                </ul>
-            </div>
-            <div class = "user-favorites">
-                <h2>Your Favorites</h2>
-                <ul id="favoritesList">
-                    <li>Dish 1</li>
-                    <li>Dish 2</li>
-                    <li>Dish 3</li>
-                </ul>
-                <input type="text" id="newFavorite" placeholder="Add new favorite">
-                <button onclick="addFavorite()">Add Favorite</button>
-            </div>
-        </section>
+		<div class="user-info">
+			<div class = "user-details">
+				<h2>Your Details</h2>
+				<form id="detailsUpdate">
+
+				</form>
+			</div>
+			<div class = "user-orders">
+				<h2>Order History</h2>
+				<ul>
+					<li>Dish 1- Date</li>
+					<li>Dish 2- Date</li>
+					<li>Dish 3- Date</li>
+				</ul>
+			</div>
+			<div class = "user-favorites">
+				<h2>Your Favorites</h2>
+				<ul id="favoritesList">
+					<li>Dish 1</li>
+					<li>Dish 2</li>
+					<li>Dish 3</li>
+				</ul>
+				<input type="text" id="newFavorite" placeholder="Add new favorite">
+				<button onclick="addFavorite()">Add Favorite</button>
+			</div>
+			<div class = "user-favorites">
+				<h2>Payment Method</h2>
+				Card Details to go here <br /><br />
+				<button onclick="addFavorite()">Edit</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+			// placeholder
+			function displayDetails()
+			{
+				savedUser = localStorage.getItem('user');
+				userOne = JSON.parse(savedUser);
+				document.getElementById('detailsUpdate').innerHTML =
+				'<form id="detailsUpdate">'
+					+'Username: <input type="text" id="name" value="'+userOne.name+'" readonly>'
+					+'Email: <input type="email" id="email" value="'+userOne.email+'" readonly>'
+					+'Phone Number:<input type="text" id="phone" value="'+userOne.phoneNo+'" readonly>'
+					+'Address: <input type="text" id="address" value="'+userOne.address+'" readonly>'
+					+'<button onClick="updateDetails()">Update Details</button>'
+				+'</form>'
+			}
+			displayDetails();
+		</script>
         <script src="userInfo_script.js"></script>
     </body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
 </html>
