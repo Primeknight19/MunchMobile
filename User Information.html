@@ -48,11 +48,11 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-			// placeholder
 			function displayDetails()
 			{
 				savedUser = localStorage.getItem('user');
 				userOne = JSON.parse(savedUser);
+				document.getElementById('username').textContent=userOne.name.split(' ')[0];
 				document.getElementById('detailsUpdate').innerHTML =
 				'<form id="detailsUpdate">'
 					+'Username: <input type="text" id="name" value="'+userOne.name+'" readonly>'
