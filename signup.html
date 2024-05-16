@@ -5,19 +5,135 @@
 		<title>Munch Mobile - Sign Up</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <style>
+            body, html {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Open Sans', sans-serif;
+                background: #f4f4f4;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .create-account-container {
+                width: 100%;
+                max-width: 500px;
+                padding: 100px;
+                background-color: #fff;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+
+            .create-account-form h2 {
+                text-align: center;
+                margin-bottom: 60px;
+            }
+
+            .form-control {
+                margin-bottom: 2px;
+            }
+
+            .form-control label {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .form-control input[type="text"],
+            .form-control input[type="password"],
+            .form-control input[type="email"] {
+                width: 100%;
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            .form-control input[type="checkbox"] {
+                margin-top: 5px;
+            }
+
+            .checkPassword {
+                font-size: 12px;
+            }
+
+            .buttonContainer {
+                padding: 5px;
+                display: flex;
+                gap: 10px;
+            }
+
+            button {
+                width: 100%;
+                padding: 10px 15px;
+                background-color: #0056b3;
+                border: none;
+                color: white;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #004494;
+            }
+
+            .message {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .message a {
+                color: #0056b3;
+                text-decoration: none;
+            }
+            
+        </style>
     </head>
 	
 	<body>
-		<form id="signupDetails">
-		Username: <input type="text" id="name" required><br /><br />
-		Password: <input type="password" id="password" required><br /><br />
-		Confirm Password: <input type="password" id="pwdCheck" required><br /><br />
-		Email: <input type="email" id="email" required><br /><br />
-		Phone Number: <input type="text" id="phoneNo" required><br /><br />
-		Address: <input type="text" id="address" required><br /><br />
-		<button type="submit">Confirm</button>&nbsp;&nbsp;
-		<button onClick="window.location.href = 'startup.html'">Cancel</button>
-		</form>
+        <div class="create-account-container">
+            <form id="signupDetails" class="create-account-form" onsubmit="handleCreateAccount(event)">
+                <h2>Create Account</h2>
+                <div class="form-control">
+                    <label for="name">Username:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-control">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                    <label class="checkPassword">
+                        <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()"> Show Password
+                    </label>
+                </div>
+                <div class="form-control">
+                    <label for="pwdCheck">Confirm Password:</label>
+                    <input type="password" id="pwdCheck" required>
+                    <label class="checkPassword">
+                        <input type="checkbox" id="showConfirmPassword" onclick="togglePasswordVisibility()"> Show Password
+                    </label>
+                </div>
+                <div class="form-control">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-control">
+                    <label for="phoneNo">Phone Number:</label>
+                    <input type="text" id="phoneNo" required>
+                </div>
+                <div class="form-control">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" required>
+                </div>
+                <div class="buttonContainer">
+                    <button type="submit">Confirm</button>
+                    <button onClick="window.location.href = 'startup.html'">Cancel</button>
+                </div>
+                <p class="message">Already have an account? <a href="login.html">Login</a></p>
+            </form>
+        </div>
 	</body>
 	<script type="text/javascript">
 		document.getElementById('signupDetails').addEventListener('submit', function(event)
@@ -31,8 +147,30 @@
 						phoneNo: document.getElementById('phoneNo').value,
 						address: document.getElementById('address').value
 					};
+
 			localStorage.setItem('user', JSON.stringify(user));
 			window.location.href = 'index.html'; // Redirect to index.html
 		});
+
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById('password');
+            var confirmPasswordInput = document.getElementById('pwdCheck');
+            var togglePassword = document.getElementById('showPassword');
+            var toggleConfirmPassword = document.getElementById('showConfirmPassword');
+
+            if(togglePassword.checked) {
+                passwordInput.type = 'text';
+            }
+            else {
+                passwordInput.type = 'password';
+            }
+
+            if(toggleConfirmPassword.checked) {
+                confirmPasswordInput.type = 'text';
+            }
+            else {
+                confirmPasswordInput.type = 'password';
+            }
+        }
 	</script>
 </html>
