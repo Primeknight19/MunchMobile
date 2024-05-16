@@ -1,0 +1,185 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Munch Mobile - Golden Dragon</title>
+</head>
+<body>
+    <!--sidebar-->
+    <div class = "sidebar">
+        <!--logo-->
+        <h1 class = "logo">MunchTime</h1>
+        <!--list of menu-->
+        <div class = "sidebar-menus">
+            <a href="index.html"><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a href="#"><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+            <a href="wallet.html"><ion-icon name="wallet-outline"></ion-icon>Wallet</a>
+            <a href="#"><ion-icon name="notifications-outline"></ion-icon>Notification</a>
+            <a href="#"><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a href="#"><ion-icon name="settings-outline"></ion-icon>Setting</a>
+        </div>
+
+        <!--logout-->
+        <div class="sidebar-logout">
+            <a href="startup.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>
+    </div>
+    <!--main-->
+    <div class="main">
+        <!--main navbar-->
+        <div class="main-navbar">
+            <!--menu when appear on mobile version-->
+            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+            <!--search bar-->
+            <!--cart summary-->
+            <div id="cartSummary" style="width:100%; text-align:right; margin-right:20px">No items in cart</div>
+            <!--profile icon on left side of navbar-->
+            <div class="profile">
+                <a class="cart" href="#" title="View Cart" onClick="window.location.href = 'cart.html'">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <span id="itemCount" class="item-count-badge">0</span>
+                </a>
+            </div>
+        </div>
+        <div class="restaurant-hero">
+            <img src="https://www.pagodared.com/blog/wp-content/uploads/2018/02/WonFun-InteriorPR-copy.jpg" alt="Featured Restaurant Image">
+        </div>
+		<div class="main-highlight" style="text-align:center">
+            <h1>Golden Dragon</h1>
+            <p>Experience the authentic flavors of Chinese cuisine with our wide selection of traditional dishes.</p>
+            <p><strong>Address:</strong> 123 Main Street, Chinatown, City, Country, 12345</p>
+            <p><strong>Hours:</strong> Monday - Sunday, 11:00 AM to 10:00 PM</p>
+        </div>
+        <!--main menus / order-->
+        <div class="main-menus">
+            <!--list of food menus-->
+            <div class="main-detail">
+                <h2 class="main-title">Choose Order</h2>
+                <div class="detail-wrapper">
+                    <div class="detail-card">
+                        <img class="detail-img" src="https://christieathome.com/wp-content/uploads/2022/02/General-Tso-Chicken-8.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Spicy Chicken</h4><br />
+                                <p class="price">$15.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <img class="detail-img" src="https://hips.hearstapps.com/hmg-prod/images/mapo-tofu-2-jpg-1642115176.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Mapo Tofu</h4><br />
+                                <p class="price">$12.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+					<div class="detail-card">
+                        <img class="detail-img" src="https://anisland.cooking/wp-content/uploads/2022/02/Roast-Cantonese-Duck-2022.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Beijing Duck</h4><br />
+                                <p class="price">$25.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="main-highlight" style="text-align:center">
+            <h2>About Us</h2>
+            <p>Established in 1990, Golden Dragon has been serving the local community with authentic Chinese cuisine prepared with fresh ingredients and traditional recipes.</p>
+        </div>
+        <div class="main-highlight" style="text-align:center">
+            <h2>Customer Reviews</h2>
+            <div class="review">
+                <p>"Absolutely delicious! The flavors were amazing, and the service was excellent." - Emily Chen</p>
+            </div>
+            <div class="review">
+                <p>"Best Chinese food in town! Highly recommend the Mapo Tofu." - Michael Wong</p>
+            </div>
+        </div>
+		<br />
+    </div>
+	<div id="SpicyChickenModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Spicy Chicken</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormSpicyChicken">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Spicy Chicken')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="MapoTofuModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Mapo Tofu</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormMapoTofu">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Mapo Tofu')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="BeijingDuckModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Beijing Duck</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormBeijingDuck">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Beijing Duck')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+<!--adding javascript-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="app.js"></script>
+</html>
