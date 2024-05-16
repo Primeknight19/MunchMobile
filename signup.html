@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UFT-8">
+		<title>Munch Mobile - Sign Up</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+	
+	<body>
+		<form id="signupDetails">
+		Username: <input type="text" id="name" required><br /><br />
+		Password: <input type="password" id="password" required><br /><br />
+		Confirm Password: <input type="password" id="pwdCheck" required><br /><br />
+		Email: <input type="email" id="email" required><br /><br />
+		Phone Number: <input type="text" id="phoneNo" required><br /><br />
+		Address: <input type="text" id="address" required><br /><br />
+		<button type="submit">Confirm</button>&nbsp;&nbsp;
+		<button onClick="window.location.href = 'startup.html'">Cancel</button>
+		</form>
+	</body>
+	<script type="text/javascript">
+		document.getElementById('signupDetails').addEventListener('submit', function(event)
+		{	
+			event.preventDefault();
+			const username = document.getElementById('name').value;
+			const user = {
+						name: document.getElementById('name').value,
+						password: document.getElementById('password').value,
+						email: document.getElementById('email').value,
+						phoneNo: document.getElementById('phoneNo').value,
+						address: document.getElementById('address').value
+					};
+			localStorage.setItem('user', JSON.stringify(user));
+			window.location.href = 'index.html'; // Redirect to index.html
+		});
+	</script>
+</html>
