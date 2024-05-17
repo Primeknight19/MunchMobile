@@ -110,19 +110,16 @@
 		<div class="modal-content">
 			<span class="close">&times;</span>
 			<h2>Signature Lasagna</h2>
-			<p>Choose your options for the Shrimp Soup.</p>
+			<p>Choose your options for the Signature Lasagna.</p>
 			<form id="addToCartFormSignatureLasagna">
 				<label for="size">Size:</label>
 				<select id="size" name="size">
-					<option value="small">Small</option>
 					<option value="medium">Medium</option>
 					<option value="large">Large</option>
 				</select>
 				<label for="extras">Add-ons:</label>
-				<input type="checkbox" id="crackers" name="extras" value="crackers">
-				<label for="crackers">Extra Crackers</label><br>
-				<input type="checkbox" id="spice" name="extras" value="spice">
-				<label for="spice">Extra Spice</label><br>
+				<input type="checkbox" id="cheese" name="extras" value="cheese">
+				<label for="cheese">Extra Cheese</label><br>
 				<label for="quantity">Quantity:</label>
 				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
 				<button type="button" onclick="addToCart('Signature Lasagna')">Add to Cart</button>
@@ -133,7 +130,7 @@
 		<div class="modal-content">
 			<span class="close">&times;</span>
 			<h2>Caprese Salad</h2>
-			<p>Choose your options for the Shrimp Soup.</p>
+			<p>Choose your options for the Caprese Salad.</p>
 			<form id="addToCartFormCapreseSalad">
 				<label for="size">Size:</label>
 				<select id="size" name="size">
@@ -141,11 +138,6 @@
 					<option value="medium">Medium</option>
 					<option value="large">Large</option>
 				</select>
-				<label for="extras">Add-ons:</label>
-				<input type="checkbox" id="crackers" name="extras" value="crackers">
-				<label for="crackers">Extra Crackers</label><br>
-				<input type="checkbox" id="spice" name="extras" value="spice">
-				<label for="spice">Extra Spice</label><br>
 				<label for="quantity">Quantity:</label>
 				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
 				<button type="button" onclick="addToCart('Caprese Salad')">Add to Cart</button>
@@ -155,20 +147,14 @@
 	<div id="ClassicTiramisuModal" class="modal">
 		<div class="modal-content">
 			<span class="close">&times;</span>
-			<h2>Shrimp Soup</h2>
-			<p>Choose your options for the Shrimp Soup.</p>
+			<h2>Classic Tiramisu</h2>
+			<p>Choose your options for the Classic Tiramisu.</p>
 			<form id="addToCartFormClassicTiramisu">
 				<label for="size">Size:</label>
 				<select id="size" name="size">
 					<option value="small">Small</option>
 					<option value="medium">Medium</option>
-					<option value="large">Large</option>
 				</select>
-				<label for="extras">Add-ons:</label>
-				<input type="checkbox" id="crackers" name="extras" value="crackers">
-				<label for="crackers">Extra Crackers</label><br>
-				<input type="checkbox" id="spice" name="extras" value="spice">
-				<label for="spice">Extra Spice</label><br>
 				<label for="quantity">Quantity:</label>
 				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
 				<button type="button" onclick="addToCart('Classic Tiramisu')">Add to Cart</button>
