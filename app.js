@@ -250,81 +250,323 @@ function addToCart(product) {
 
 function calculatePrice(product, size, extras, quantity) {
     let basePrice = 0;
-
     switch (product) {
-        case 'Shrimp Soup':
+        case 'Signature Lasagna':
             switch (size) {
-                case 'small':
-                    basePrice = 147;
-                    break;
                 case 'medium':
-                    basePrice = 160;
+                    basePrice = 32.6;
                     break;
                 case 'large':
-                    basePrice = 175;
+                    basePrice = 40.75;
                     break;
             }
             break;
-        case 'Pizza':
+        case 'Caprese Salad':
             switch (size) {
-                case 'small':
-                    basePrice = 34;
-                    break;
+				case 'small':
+					basePrice = 12;
+					break;
                 case 'medium':
-                    basePrice = 48;
+                    basePrice = 16;
                     break;
                 case 'large':
-                    basePrice = 60;
+                    basePrice = 20;
                     break;
             }
             break;
-        case 'Wine':
+		case 'Classic Tiramisu':
             switch (size) {
-                case 'glass':
+				case 'small':
+					basePrice = 10;
+					break;
+                case 'medium':
                     basePrice = 13;
                     break;
-                case 'bottle':
-                    basePrice = 50;
+            }
+            break;
+		case 'Boeuf Bourguignon':
+            switch (size) {
+				case 'medium':
+					basePrice = 24;
+					break;
+                case 'large':
+                    basePrice = 30;
                     break;
             }
             break;
-        case 'Double Cheese Burger':
+		case 'Ratatouille':
             switch (size) {
-                case 'small':
-                    basePrice = 23;
-                    break;
-                case 'medium':
-                    basePrice = 28;
-                    break;
+				case 'small':
+					basePrice = 18;
+					break
+				case 'medium':
+					basePrice = 21;
+					break
                 case 'large':
-                    basePrice = 33;
+                    basePrice = 24;
                     break;
             }
             break;
-        case 'Hot Cafe Latte':
+		case 'Tarte Tatin':
             switch (size) {
-                case 'small':
-                    basePrice = 11.5;
-                    break;
-                case 'medium':
-                    basePrice = 13.5;
-                    break;
-                case 'large':
-                    basePrice = 15.5;
-                    break;
+				case 'small':
+					basePrice = 12;
+					break
+				case 'medium':
+					basePrice = 13.5;
+					break
             }
             break;
-        case 'Fresh Salad':
+		case 'Massaman Curry':
             switch (size) {
-                case 'small':
-                    basePrice = 15;
-                    break;
-                case 'medium':
-                    basePrice = 18;
-                    break;
-                case 'large':
-                    basePrice = 22;
-                    break;
+				case 'small':
+					basePrice = 15;
+					break
+				case 'large':
+					basePrice = 20;
+					break
+            }
+            break;
+		case 'Basil Chicken':
+            switch (size) {
+				case 'small':
+					basePrice = 12;
+					break
+				case 'medium':
+					basePrice = 14;
+					break
+				case 'large':
+					basePrice = 16;
+					break
+            }
+            break;
+		case 'Pad Thai':
+            switch (size) {
+				case 'small':
+					basePrice = 10;
+					break
+				case 'medium':
+					basePrice = 11.5;
+					break
+				case 'large':
+					basePrice = 13;
+					break
+            }
+            break;
+		case 'Butter Chicken':
+            switch (size) {
+				case 'small':
+					basePrice = 15;
+					break
+				case 'medium':
+					basePrice = 17.5;
+					break
+				case 'large':
+					basePrice = 20;
+					break
+            }
+            break;
+		case 'Palak Paneer':
+            switch (size) {
+				case 'small':
+					basePrice = 12;
+					break
+				case 'medium':
+					basePrice = 15;
+					break
+            }
+            break;
+		case 'Mango Lassi':
+            switch (size) {
+				case 'small':
+					basePrice = 8;
+					break
+				case 'medium':
+					basePrice = 10;
+					break
+            }
+            break;
+		case 'Sushi Platter':
+            switch (size) {
+				case 'small':
+					basePrice = 25;
+					break
+				case 'large':
+					basePrice = 35;
+					break
+            }
+            break;
+		case 'Ramen Bowl':
+            switch (size) {
+				case 'small':
+					basePrice = 15;
+					break
+				case 'large':
+					basePrice = 23;
+					break
+            }
+            break;
+		case 'Tempura Bento':
+            switch (size) {
+				case 'small':
+					basePrice = 20;
+					break
+				case 'large':
+					basePrice = 24;
+					break
+            }
+            break;
+		case 'Spicy Chicken':
+            switch (size) {
+				case 'medium':
+					basePrice = 15;
+					break
+				case 'large':
+					basePrice = 18;
+					break
+            }
+            break;
+		case 'Mapo Tofu':
+            switch (size) {
+				case 'small':
+					basePrice = 12;
+					break
+				case 'medium':
+					basePrice = 14;
+					break
+            }
+            break;
+		case 'Beijing Duck':
+            switch (size) {
+				case 'small':
+					basePrice = 25;
+					break
+				case 'large':
+					basePrice = 35;
+					break
+            }
+            break;
+		case 'Tacos':
+            switch (size) {
+				case 'small':
+					basePrice = 8;
+					break
+				case 'medium':
+					basePrice = 10;
+					break
+            }
+            break;
+		case 'Mexican Burrito':
+            switch (size) {
+				case 'medium':
+					basePrice = 10;
+					break
+				case 'large':
+					basePrice = 15;
+					break
+            }
+            break;
+		case 'Mole Poblano':
+            switch (size) {
+				case 'small':
+					basePrice = 12;
+					break
+				case 'medium':
+					basePrice = 13.5;
+					break
+            }
+            break;
+		case 'Street Tacos':
+            switch (size) {
+				case 'small':
+					basePrice = 2.5;
+					break
+				case 'medium':
+					basePrice = 4;
+					break
+            }
+            break;
+		case 'Street Burger':
+            switch (size) {
+				case 'small':
+					basePrice = 3.5;
+					break
+				case 'medium':
+					basePrice = 4.5;
+					break
+				case 'large':
+					basePrice = 5.5;
+					break
+            }
+            break;
+		case 'Street Nacho':
+            switch (size) {
+				case 'small':
+					basePrice = 5;
+					break
+				case 'medium':
+					basePrice = 7;
+					break
+            }
+            break;
+		case 'Vanilla':
+            switch (size) {
+				case 'small':
+					basePrice = 3;
+					break
+				case 'large':
+					basePrice = 8;
+					break
+            }
+            break;
+		case 'Chocolate':
+            switch (size) {
+				case 'small':
+					basePrice = 3.5;
+					break
+				case 'large':
+					basePrice = 9.5;
+					break
+            }
+            break;
+		case 'Mango':
+            switch (size) {
+				case 'small':
+					basePrice = 4;
+					break
+				case 'large':
+					basePrice = 11;
+					break
+            }
+            break;
+		case 'Ribeye':
+            switch (size) {
+				case 'medium':
+					basePrice = 40;
+					break
+				case 'large':
+					basePrice = 50;
+					break
+            }
+            break;
+		case 'Filet Mignon':
+            switch (size) {
+				case 'medium':
+					basePrice = 45;
+					break
+				case 'large':
+					basePrice = 55;
+					break
+            }
+            break;
+		case 'New York Strip':
+            switch (size) {
+				case 'medium':
+					basePrice = 35;
+					break
+				case 'large':
+					basePrice = 45;
+					break
             }
             break;
         default:
@@ -335,15 +577,28 @@ function calculatePrice(product, size, extras, quantity) {
     let extrasPrice = 0;
     extras.forEach(extra => {
         switch (extra) {
-            case 'crackers':
-            case 'extra cheese':
-            case 'pepperoni':
-            case 'extra bacon':
-            case 'extra shot':
-            case 'whipped cream':
-            case 'croutons':
-            case 'extra dressing':
+            case 'cheese':
+            case 'flavour':
+            case 'scoop':
+            case 'spice':
+            case 'noodles':
+            case 'mango':
+            case 'shrimp':
+            case 'mild':
+            case 'beef':
+            case 'meat':
+            case 'topping':
+            case 'cucumber':
+            case 'chicken':
+            case 'onion':
+            case 'pork':
                 extrasPrice += 5; // Each extra costs $5
+                break;
+			case 'sprinkles':
+			case 'cheeses':
+			case 'patty':
+			case 'barbeque':
+                extrasPrice += 2;
                 break;
             default:
                 extrasPrice += 0;
