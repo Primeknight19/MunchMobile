@@ -1,70 +1,13 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Munch Mobile - Restaurant</title>
-    <style>
-
-        .main {
-            width: 100%;
-            height: max-content;
-            min-width: 100px;
-            padding: 2%;
-            background-color: var(--softGreencolor);
-            margin-left: 250px;
-        }
-        .restaurant-hero img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        .restaurant-info, .about-restaurant, .customer-reviews {
-            background-color: #f8f8f8;
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .menu-highlights {
-        clear: both; 
-        }
-
-        .menu-highlights h2, .restaurant-info h1, .about-restaurant h2, .customer-reviews h2 {
-            color: #d35400;
-            padding-left: 40px;
-        }
-        .highlight-card, .review {
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            margin-top: 20px;
-            transition: transform 0.3s ease-in-out;
-            cursor: pointer;
-        }
-        .highlight-card:hover, .review:hover {
-            transform: scale(1.05);
-        }
-        .highlight-wrapper, .customer-reviews {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .highlight-img, .highlight-desc, .review {
-            text-align: center;
-            padding: 15px;
-        }
-        .highlight-img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-        }
-    </style>
+    <title>Munch Mobile - Prime Cuts Steakhouse</title>
 </head>
 <body>
+    <!--sidebar-->
     <div class = "sidebar">
         <!--logo-->
         <h1 class = "logo">MunchTime</h1>
@@ -80,50 +23,79 @@
 
         <!--logout-->
         <div class="sidebar-logout">
-            <a href="#"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+            <a href="startup.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
         </div>
     </div>
+    <!--main-->
     <div class="main">
-        <div class="restaurant-hero">
-            <img src="https://img.delicious.com.au/HrHl0F5-/del/2023/03/bos-184292-2.jpg" alt="Featured Restaurant Image" style="width:1000px;height:600px;">
+        <!--main navbar-->
+        <div class="main-navbar">
+            <!--menu when appear on mobile version-->
+            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+            <!--search bar-->
+            <!--cart summary-->
+            <div id="cartSummary" style="width:100%; text-align:right; margin-right:20px">No items in cart</div>
+            <!--profile icon on left side of navbar-->
+            <div class="profile">
+                <a class="cart" href="#" title="View Cart" onClick="window.location.href = 'cart.html'">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <span id="itemCount" class="item-count-badge">0</span>
+                </a>
+            </div>
         </div>
-        <div class="restaurant-info">
-            <h1>Prime Cuts Steakhouse</h1>
+        <div class="restaurant-hero">
+            <img src="https://img.delicious.com.au/HrHl0F5-/del/2023/03/bos-184292-2.jpg" alt="Featured Restaurant Image">
+        </div>
+		<div class="main-highlight" style="text-align:center">
+			<h1>Prime Cuts Steakhouse</h1>
             <p>Indulge in the finest cuts of prime beef at Prime Cuts Steakhouse, where every steak is a masterpiece of flavor and tenderness.</p>
             <p><strong>Location:</strong> 123 Steakhouse Avenue, Grille City, GC 45678</p>
             <p><strong>Hours:</strong> Monday - Sunday, 5:00 PM to 11:00 PM</p>
         </div>
-        <div class="menu-highlights">
-            <h2>Featured Cuts</h2>
-            <div class="highlight-wrapper">
-                <div class="highlight-card">
-                    <img class="highlight-img" src="https://thebigmansworld.com/wp-content/uploads/2023/05/ribeye-steak-recipe.jpg" alt="Ribeye Steak">
-                    <div class="highlight-desc">
-                        <h4>Ribeye</h4>
-                        <p>$40.00</p>
+        <!--main menus / order-->
+        <div class="main-menus">
+            <!--list of food menus-->
+            <div class="main-detail">
+                <h2 class="main-title">Choose Order</h2>
+                <div class="detail-wrapper">
+                    <div class="detail-card">
+                        <img class="detail-img" src="https://thebigmansworld.com/wp-content/uploads/2023/05/ribeye-steak-recipe.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Ribeye</h4><br />
+                                <p class="price">$40.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
                     </div>
-                </div>
-                <div class="highlight-card">
-                    <img class="highlight-img" src="https://hips.hearstapps.com/hmg-prod/images/delish-filet-mignon-horizontal-1541189043.jpeg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*" alt="Filet Mignon">
-                    <div class="highlight-desc">
-                        <h4>Filet Mignon</h4>
-                        <p>$45.00</p>
+                    <div class="detail-card">
+                        <img class="detail-img" src="https://hips.hearstapps.com/hmg-prod/images/delish-filet-mignon-horizontal-1541189043.jpeg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Filet Mignon</h4><br />
+                                <p class="price">$45.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
                     </div>
-                </div>
-                <div class="highlight-card">
-                    <img class="highlight-img" src="https://thebigmansworld.com/wp-content/uploads/2023/05/new-york-strip-steak-recipe.jpg" alt="New York Strip">
-                    <div class="highlight-desc">
-                        <h4>New York Strip</h4>
-                        <p>$35.00</p>
+					<div class="detail-card">
+                        <img class="detail-img" src="https://thebigmansworld.com/wp-content/uploads/2023/05/new-york-strip-steak-recipe.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>New York Strip</h4><br />
+                                <p class="price">$35.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="about-restaurant">
+		<div class="main-highlight" style="text-align:center">
             <h2>About Us</h2>
             <p>Since 1990, Prime Cuts Steakhouse has been serving the finest USDA Prime beef, expertly aged and grilled to perfection, providing an unparalleled dining experience for steak lovers.</p>
         </div>
-        <div class="customer-reviews">
+        <div class="main-highlight" style="text-align:center">
             <h2>Customer Reviews</h2>
             <div class="review">
                 <p>"The steaks at Prime Cuts Steakhouse are incredible! Perfectly seasoned and cooked to your liking every time." - Emily Davis</p>
@@ -132,12 +104,82 @@
                 <p>"Prime Cuts Steakhouse never disappoints. The Filet Mignon is always tender and flavorful, and the service is top-notch." - Michael Brown</p>
             </div>
         </div>
+		<br />
     </div>
+	<div id="RibeyeModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Ribeye</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormRibeye">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Ribeye')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="FiletMignonModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Filet Mignon</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormFiletMignon">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Filet Mignon')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="NewYorkStripModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>New York Strip</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormNewYorkStrip">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('New York Strip')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
 </body>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 <!--adding javascript-->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="app.js"></script>
 </html>
