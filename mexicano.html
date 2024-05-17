@@ -110,19 +110,18 @@
 		<div class="modal-content">
 			<span class="close">&times;</span>
 			<h2>Tacos</h2>
-			<p>Choose your options for the Shrimp Soup.</p>
+			<p>Choose your options for the Tacos.</p>
 			<form id="addToCartFormTacos">
-				<label for="size">Size:</label>
+				<label for="size">Number:</label>
 				<select id="size" name="size">
-					<option value="small">Small</option>
-					<option value="medium">Medium</option>
-					<option value="large">Large</option>
+					<option value="small">2 Tacos</option>
+					<option value="medium">3 Tacos</option>
 				</select>
 				<label for="extras">Add-ons:</label>
-				<input type="checkbox" id="crackers" name="extras" value="crackers">
-				<label for="crackers">Extra Crackers</label><br>
-				<input type="checkbox" id="spice" name="extras" value="spice">
-				<label for="spice">Extra Spice</label><br>
+				<input type="checkbox" id="meat" name="extras" value="meat">
+				<label for="meat">Extra Meat</label><br>
+				<input type="checkbox" id="topping" name="extras" value="topping">
+				<label for="topping">Extra Toppings</label><br>
 				<label for="quantity">Quantity:</label>
 				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
 				<button type="button" onclick="addToCart('Tacos')">Add to Cart</button>
@@ -133,19 +132,13 @@
 		<div class="modal-content">
 			<span class="close">&times;</span>
 			<h2>Mexican Burrito</h2>
-			<p>Choose your options for the Shrimp Soup.</p>
+			<p>Choose your options for the Mexican Burrito.</p>
 			<form id="addToCartFormMexicanBurrito">
 				<label for="size">Size:</label>
 				<select id="size" name="size">
-					<option value="small">Small</option>
 					<option value="medium">Medium</option>
 					<option value="large">Large</option>
 				</select>
-				<label for="extras">Add-ons:</label>
-				<input type="checkbox" id="crackers" name="extras" value="crackers">
-				<label for="crackers">Extra Crackers</label><br>
-				<input type="checkbox" id="spice" name="extras" value="spice">
-				<label for="spice">Extra Spice</label><br>
 				<label for="quantity">Quantity:</label>
 				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
 				<button type="button" onclick="addToCart('Mexican Burrito')">Add to Cart</button>
@@ -156,19 +149,16 @@
 		<div class="modal-content">
 			<span class="close">&times;</span>
 			<h2>Mole Poblano</h2>
-			<p>Choose your options for the Shrimp Soup.</p>
+			<p>Choose your options for the Mole Poblano.</p>
 			<form id="addToCartFormMolePoblano">
 				<label for="size">Size:</label>
 				<select id="size" name="size">
 					<option value="small">Small</option>
 					<option value="medium">Medium</option>
-					<option value="large">Large</option>
 				</select>
 				<label for="extras">Add-ons:</label>
-				<input type="checkbox" id="crackers" name="extras" value="crackers">
-				<label for="crackers">Extra Crackers</label><br>
-				<input type="checkbox" id="spice" name="extras" value="spice">
-				<label for="spice">Extra Spice</label><br>
+				<input type="checkbox" id="chicken" name="extras" value="chicken">
+				<label for="chicken">Extra Chicken</label><br>
 				<label for="quantity">Quantity:</label>
 				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
 				<button type="button" onclick="addToCart('Mole Poblano')">Add to Cart</button>
