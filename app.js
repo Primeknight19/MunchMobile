@@ -68,6 +68,18 @@ document.addEventListener('DOMContentLoaded', function() {
         tacosModal: document.getElementById("TacosModal"),
         mexicanBurritoModal: document.getElementById("MexicanBurritoModal"),
         molePoblanoModal: document.getElementById("MolePoblanoModal"),
+        streetTacosModal: document.getElementById("StreetTacosModal"),
+        streetBurgerModal: document.getElementById("StreetBurgerModal"),
+        streetNachoModal: document.getElementById("StreetNachoModal"),
+        massamanCurryModal: document.getElementById("MassamanCurryModal"),
+        basilChickenModal: document.getElementById("BasilChickenModal"),
+        padThaiModal: document.getElementById("PadThaiModal"),
+        vanillaModal: document.getElementById("VanillaModal"),
+        chocolateModal: document.getElementById("ChocolateModal"),
+	mangoModal: document.getElementById("MangoModal"),
+	ribeyeModal: document.getElementById("RibeyeModal"),
+	filetMignonModal: document.getElementById("FiletMignonModal"),
+	newYorkStripModal: document.getElementById("NewYorkStripModal"),
     };
 
     const buttons = {
@@ -89,6 +101,18 @@ document.addEventListener('DOMContentLoaded', function() {
         tacosBtn: document.querySelector(".detail-card img[src='https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/2/29/0/0149359_Making-Taco_s4x3.jpg.rend.hgtvcom.1280.960.suffix/1371603491866.jpeg']"),
         mexicanBurritoBtn: document.querySelector(".detail-card img[src='https://www.seriouseats.com/thmb/lOdEqFZsV3LOzX5Pc2Y6XCJuvTs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2020__10__20201002-mission-style-burrito-jillian-atkinson-2-6841455590ed4c3981529b232166643a.jpg']"),
         molePoblanoBtn: document.querySelector(".detail-card img[src='https://www.mccormick.com/-/media/project/oneweb/mccormick-us/mccormick/recipe-categories/m/1376x774/mole_poblano_chicken_1376x774.jpg?rev=be4f11cdcbe741c29f1635f48d7c5506&vd=20210922T165012Z&extension=webp&hash=A1E6549E6559FC1F4DBA8FD923D07893']"),
+        streetTacosBtn: document.querySelector(".detail-card img[src='https://carlsbadcravings.com/wp-content/uploads/2023/06/chicken-street-tacos-7a.jpg']"),
+        streetBurgerBtn: document.querySelector(".detail-card img[src='https://resizer.otstatic.com/v2/photos/wide-mlarge/2/42601973.webp']"),
+        streetNachoBtn: document.querySelector(".detail-card img[src='https://www.simplyrecipes.com/thmb/Kh_U_4uRwlEsQ8zcXgOConFciVg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2015__08__mexican-street-corn-nachos-horiz-a-1200-9734ffc6a5ae48a5961c049d5adf2e7c.jpg']"),
+        massamanCurryBtn: document.querySelector(".detail-card img[src='https://minimalistbaker.com/wp-content/uploads/2019/07/Massaman-Curry-SQUARE.jpg']"),
+        basilChickenBtn: document.querySelector(".detail-card img[src='https://healthyfitnessmeals.com/wp-content/uploads/2020/09/THAI-BASIL-CHICKEN-6.jpg']"),
+        padThaiBtn: document.querySelector(".detail-card img[src='https://lovingitvegan.com/wp-content/uploads/2022/06/Vegan-Pad-Thai-Square-3.jpg']"),
+        vanillaBtn: document.querySelector(".detail-card img[src='https://static.toiimg.com/thumb/63971154.cms?width=573&height=430']"),
+        chocolateBtn: document.querySelector(".detail-card img[src='https://www.nourish-and-fete.com/wp-content/uploads/2018/08/french-style-double-chocolate-ice-cream-740px-1.jpg']"),
+        mangoBtn: document.querySelector(".detail-card img[src='https://media01.stockfood.com/largepreviews/ODI0MTg0Ng==/00265866-A-scoop-of-mango-ice-cream-on-a-spoon.jpg']"),
+        ribeyeBtn: document.querySelector(".detail-card img[src='https://thebigmansworld.com/wp-content/uploads/2023/05/ribeye-steak-recipe.jpg']"),
+        filetMignonBtn: document.querySelector(".detail-card img[src='https://hips.hearstapps.com/hmg-prod/images/delish-filet-mignon-horizontal-1541189043.jpeg']"),
+        newYorkStripBtn: document.querySelector(".detail-card img[src='https://thebigmansworld.com/wp-content/uploads/2023/05/new-york-strip-steak-recipe.jpg']"),
     };
 
     const spans = document.getElementsByClassName("close");
@@ -146,7 +170,18 @@ const productImages = {
     'Tacos': "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/2/29/0/0149359_Making-Taco_s4x3.jpg.rend.hgtvcom.1280.960.suffix/1371603491866.jpeg",
     'Mexican Burrito': "https://www.seriouseats.com/thmb/lOdEqFZsV3LOzX5Pc2Y6XCJuvTs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2020__10__20201002-mission-style-burrito-jillian-atkinson-2-6841455590ed4c3981529b232166643a.jpg",
     'molePoblano': "https://www.mccormick.com/-/media/project/oneweb/mccormick-us/mccormick/recipe-categories/m/1376x774/mole_poblano_chicken_1376x774.jpg?rev=be4f11cdcbe741c29f1635f48d7c5506&vd=20210922T165012Z&extension=webp&hash=A1E6549E6559FC1F4DBA8FD923D07893",
-
+    'Street Tacos': "https://carlsbadcravings.com/wp-content/uploads/2023/06/chicken-street-tacos-7a.jpg",
+    'Street Burger': "https://resizer.otstatic.com/v2/photos/wide-mlarge/2/42601973.webp",
+    'Street Nacho': "https://www.simplyrecipes.com/thmb/Kh_U_4uRwlEsQ8zcXgOConFciVg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2015__08__mexican-street-corn-nachos-horiz-a-1200-9734ffc6a5ae48a5961c049d5adf2e7c.jpg",
+    'Massaman Curry': "https://minimalistbaker.com/wp-content/uploads/2019/07/Massaman-Curry-SQUARE.jpg",
+    'Basil Chicken': "https://healthyfitnessmeals.com/wp-content/uploads/2020/09/THAI-BASIL-CHICKEN-6.jpg",
+    'Pad Thai': "https://lovingitvegan.com/wp-content/uploads/2022/06/Vegan-Pad-Thai-Square-3.jpg",
+    'Vanilla': "https://static.toiimg.com/thumb/63971154.cms?width=573&height=430",
+    'Chocolate': "https://www.nourish-and-fete.com/wp-content/uploads/2018/08/french-style-double-chocolate-ice-cream-740px-1.jpg",
+    'Mango': "https://media01.stockfood.com/largepreviews/ODI0MTg0Ng==/00265866-A-scoop-of-mango-ice-cream-on-a-spoon.jpg",
+    'Ribeye': "https://thebigmansworld.com/wp-content/uploads/2023/05/ribeye-steak-recipe.jpg",
+    'Filet Mignon': "https://hips.hearstapps.com/hmg-prod/images/delish-filet-mignon-horizontal-1541189043.jpeg",
+    'New York Strip': "https://thebigmansworld.com/wp-content/uploads/2023/05/new-york-strip-steak-recipe.jpg",
 };
 
 let cart = [];
