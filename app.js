@@ -169,7 +169,7 @@ const productImages = {
     'Beijing Duck': "https://anisland.cooking/wp-content/uploads/2022/02/Roast-Cantonese-Duck-2022.jpg",
     'Tacos': "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/2/29/0/0149359_Making-Taco_s4x3.jpg.rend.hgtvcom.1280.960.suffix/1371603491866.jpeg",
     'Mexican Burrito': "https://www.seriouseats.com/thmb/lOdEqFZsV3LOzX5Pc2Y6XCJuvTs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2020__10__20201002-mission-style-burrito-jillian-atkinson-2-6841455590ed4c3981529b232166643a.jpg",
-    'molePoblano': "https://www.mccormick.com/-/media/project/oneweb/mccormick-us/mccormick/recipe-categories/m/1376x774/mole_poblano_chicken_1376x774.jpg?rev=be4f11cdcbe741c29f1635f48d7c5506&vd=20210922T165012Z&extension=webp&hash=A1E6549E6559FC1F4DBA8FD923D07893",
+    'mole Poblano': "https://www.mccormick.com/-/media/project/oneweb/mccormick-us/mccormick/recipe-categories/m/1376x774/mole_poblano_chicken_1376x774.jpg?rev=be4f11cdcbe741c29f1635f48d7c5506&vd=20210922T165012Z&extension=webp&hash=A1E6549E6559FC1F4DBA8FD923D07893",
     'Street Tacos': "https://carlsbadcravings.com/wp-content/uploads/2023/06/chicken-street-tacos-7a.jpg",
     'Street Burger': "https://resizer.otstatic.com/v2/photos/wide-mlarge/2/42601973.webp",
     'Street Nacho': "https://www.simplyrecipes.com/thmb/Kh_U_4uRwlEsQ8zcXgOConFciVg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2015__08__mexican-street-corn-nachos-horiz-a-1200-9734ffc6a5ae48a5961c049d5adf2e7c.jpg",
