@@ -110,19 +110,13 @@
 		<div class="modal-content">
 			<span class="close">&times;</span>
 			<h2>Street Tacos</h2>
-			<p>Choose your options for the Shrimp Soup.</p>
+			<p>Choose your options for the Street Tacos.</p>
 			<form id="addToCartFormStreetTacos">
-				<label for="size">Size:</label>
+				<label for="size">Number:</label>
 				<select id="size" name="size">
-					<option value="small">Small</option>
-					<option value="medium">Medium</option>
-					<option value="large">Large</option>
+					<option value="small">One Taco</option>
+					<option value="medium">Two Tacos</option>
 				</select>
-				<label for="extras">Add-ons:</label>
-				<input type="checkbox" id="crackers" name="extras" value="crackers">
-				<label for="crackers">Extra Crackers</label><br>
-				<input type="checkbox" id="spice" name="extras" value="spice">
-				<label for="spice">Extra Spice</label><br>
 				<label for="quantity">Quantity:</label>
 				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
 				<button type="button" onclick="addToCart('Street Tacos')">Add to Cart</button>
@@ -133,7 +127,7 @@
 		<div class="modal-content">
 			<span class="close">&times;</span>
 			<h2>Street Burger</h2>
-			<p>Choose your options for the Shrimp Soup.</p>
+			<p>Choose your options for the Steet Burger.</p>
 			<form id="addToCartFormStreetBurger">
 				<label for="size">Size:</label>
 				<select id="size" name="size">
@@ -142,10 +136,8 @@
 					<option value="large">Large</option>
 				</select>
 				<label for="extras">Add-ons:</label>
-				<input type="checkbox" id="crackers" name="extras" value="crackers">
-				<label for="crackers">Extra Crackers</label><br>
-				<input type="checkbox" id="spice" name="extras" value="spice">
-				<label for="spice">Extra Spice</label><br>
+				<input type="checkbox" id="patty" name="extras" value="patty">
+				<label for="patty">Extra Patty</label><br>
 				<label for="quantity">Quantity:</label>
 				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
 				<button type="button" onclick="addToCart('Street Burger')">Add to Cart</button>
@@ -155,20 +147,17 @@
 	<div id="StreetNachoModal" class="modal">
 		<div class="modal-content">
 			<span class="close">&times;</span>
-			<h2>Street Nacho</h2>
-			<p>Choose your options for the Shrimp Soup.</p>
+			<h2>Street Nachos</h2>
+			<p>Choose your options for the Street Nachos.</p>
 			<form id="addToCartFormStreetNacho">
 				<label for="size">Size:</label>
 				<select id="size" name="size">
 					<option value="small">Small</option>
 					<option value="medium">Medium</option>
-					<option value="large">Large</option>
 				</select>
 				<label for="extras">Add-ons:</label>
-				<input type="checkbox" id="crackers" name="extras" value="crackers">
-				<label for="crackers">Extra Crackers</label><br>
-				<input type="checkbox" id="spice" name="extras" value="spice">
-				<label for="spice">Extra Spice</label><br>
+				<input type="checkbox" id="cheese" name="extras" value="cheese">
+				<label for="cheese">Extra Cheese</label><br>
 				<label for="quantity">Quantity:</label>
 				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
 				<button type="button" onclick="addToCart('Street Nacho')">Add to Cart</button>
