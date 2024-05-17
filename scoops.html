@@ -1,70 +1,13 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Munch Mobile - Restaurant</title>
-    <style>
-
-        .main {
-            width: 100%;
-            height: max-content;
-            min-width: 100px;
-            padding: 2%;
-            background-color: var(--softGreencolor);
-            margin-left: 250px;
-        }
-        .restaurant-hero img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        .restaurant-info, .about-restaurant, .customer-reviews {
-            background-color: #f8f8f8;
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .menu-highlights {
-        clear: both; 
-        }
-
-        .menu-highlights h2, .restaurant-info h1, .about-restaurant h2, .customer-reviews h2 {
-            color: #d35400;
-            padding-left: 40px;
-        }
-        .highlight-card, .review {
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            margin-top: 20px;
-            transition: transform 0.3s ease-in-out;
-            cursor: pointer;
-        }
-        .highlight-card:hover, .review:hover {
-            transform: scale(1.05);
-        }
-        .highlight-wrapper, .customer-reviews {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .highlight-img, .highlight-desc, .review {
-            text-align: center;
-            padding: 15px;
-        }
-        .highlight-img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-        }
-    </style>
+    <title>Munch Mobile - Sweet Scoops Ice Cream</title>
 </head>
 <body>
+    <!--sidebar-->
     <div class = "sidebar">
         <!--logo-->
         <h1 class = "logo">MunchTime</h1>
@@ -80,50 +23,79 @@
 
         <!--logout-->
         <div class="sidebar-logout">
-            <a href="#"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+            <a href="startup.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
         </div>
     </div>
+    <!--main-->
     <div class="main">
-        <div class="restaurant-hero">
-            <img src="https://sharpsheets.io/wp-content/uploads/2023/11/ice-cream.webp" alt="Featured Restaurant Image" style="width:1000px;height:600px;">
+        <!--main navbar-->
+        <div class="main-navbar">
+            <!--menu when appear on mobile version-->
+            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+            <!--search bar-->
+            <!--cart summary-->
+            <div id="cartSummary" style="width:100%; text-align:right; margin-right:20px">No items in cart</div>
+            <!--profile icon on left side of navbar-->
+            <div class="profile">
+                <a class="cart" href="#" title="View Cart" onClick="window.location.href = 'cart.html'">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <span id="itemCount" class="item-count-badge">0</span>
+                </a>
+            </div>
         </div>
-        <div class="restaurant-info">
-            <h1>Sweet Scoops Ice Cream</h1>
+        <div class="restaurant-hero">
+            <img src="https://sharpsheets.io/wp-content/uploads/2023/11/ice-cream.webp" alt="Featured Restaurant Image">
+        </div>
+		<div class="main-highlight" style="text-align:center">
+			<h1>Sweet Scoops Ice Cream</h1>
             <p>Indulge in the creamy goodness of handcrafted ice cream at Sweet Scoops, where every scoop is a delight.</p>
             <p><strong>Location:</strong> 456 Sprinkle Street, Frosty Town, FT 12345</p>
             <p><strong>Hours:</strong> Monday - Sunday, 12:00 PM to 9:00 PM</p>
         </div>
-        <div class="menu-highlights">
-            <h2>Featured Flavors</h2>
-            <div class="highlight-wrapper">
-                <div class="highlight-card">
-                    <img class="highlight-img" src="https://static.toiimg.com/thumb/63971154.cms?width=573&height=430" alt="Vanilla Ice Cream">
-                    <div class="highlight-desc">
-                        <h4>Vanilla</h4>
-                        <p>$3.00 per scoop</p>
+        <!--main menus / order-->
+        <div class="main-menus">
+            <!--list of food menus-->
+            <div class="main-detail">
+                <h2 class="main-title">Choose Order</h2>
+                <div class="detail-wrapper">
+                    <div class="detail-card">
+                        <img class="detail-img" src="https://static.toiimg.com/thumb/63971154.cms?width=573&height=430">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Vanilla</h4><br />
+                                <p class="price">$3.00 per scoop</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
                     </div>
-                </div>
-                <div class="highlight-card">
-                    <img class="highlight-img" src="https://www.nourish-and-fete.com/wp-content/uploads/2018/08/french-style-double-chocolate-ice-cream-740px-1.jpg" alt="Chocolate Ice Cream">
-                    <div class="highlight-desc">
-                        <h4>Chocolate</h4>
-                        <p>$3.50 per scoop</p>
+                    <div class="detail-card">
+                        <img class="detail-img" src="https://www.nourish-and-fete.com/wp-content/uploads/2018/08/french-style-double-chocolate-ice-cream-740px-1.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Chocolate</h4><br />
+                                <p class="price">$3.50 per scoop</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
                     </div>
-                </div>
-                <div class="highlight-card">
-                    <img class="highlight-img" src="https://media01.stockfood.com/largepreviews/ODI0MTg0Ng==/00265866-A-scoop-of-mango-ice-cream-on-a-spoon.jpg" alt="Mango Ice Cream">
-                    <div class="highlight-desc">
-                        <h4>Mango</h4>
-                        <p>$4.00 per scoop</p>
+					<div class="detail-card">
+                        <img class="detail-img" src="https://media01.stockfood.com/largepreviews/ODI0MTg0Ng==/00265866-A-scoop-of-mango-ice-cream-on-a-spoon.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Mango</h4><br />
+                                <p class="price">$4.00 per scoop</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="about-restaurant">
+		<div class="main-highlight" style="text-align:center">
             <h2>About Us</h2>
             <p>Established in 2010, Sweet Scoops is committed to creating the perfect scoop of ice cream using only the finest ingredients and traditional techniques.</p>
         </div>
-        <div class="customer-reviews">
+        <div class="main-highlight" style="text-align:center">
             <h2>Customer Reviews</h2>
             <div class="review">
                 <p>"Sweet Scoops has the creamiest ice cream in town! Their flavors are so rich and delicious, it's hard to pick just one." - Jessica Thompson</p>
@@ -132,12 +104,82 @@
                 <p>"I'm a regular at Sweet Scoops, and for good reason! Their ice cream is consistently amazing, and the service is always friendly." - David Nguyen</p>
             </div>
         </div>
+		<br />
     </div>
+	<div id="VanillaModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Vanilla</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormVanilla">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Vanilla')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="ChocolateModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Chocolate</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormChocolate">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Chocolate')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="MangoModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Mango</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormMango">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Mango')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
 </body>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 <!--adding javascript-->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="app.js"></script>
 </html>
