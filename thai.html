@@ -1,70 +1,13 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Munch Mobile - Restaurant</title>
-    <style>
-
-        .main {
-            width: 100%;
-            height: max-content;
-            min-width: 100px;
-            padding: 2%;
-            background-color: var(--softGreencolor);
-            margin-left: 250px;
-        }
-        .restaurant-hero img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        .restaurant-info, .about-restaurant, .customer-reviews {
-            background-color: #f8f8f8;
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .menu-highlights {
-        clear: both; 
-        }
-
-        .menu-highlights h2, .restaurant-info h1, .about-restaurant h2, .customer-reviews h2 {
-            color: #d35400;
-            padding-left: 40px;
-        }
-        .highlight-card, .review {
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            margin-top: 20px;
-            transition: transform 0.3s ease-in-out;
-            cursor: pointer;
-        }
-        .highlight-card:hover, .review:hover {
-            transform: scale(1.05);
-        }
-        .highlight-wrapper, .customer-reviews {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .highlight-img, .highlight-desc, .review {
-            text-align: center;
-            padding: 15px;
-        }
-        .highlight-img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-        }
-    </style>
+    <title>Munch Mobile - Thai Spice Delight</title>
 </head>
 <body>
+    <!--sidebar-->
     <div class = "sidebar">
         <!--logo-->
         <h1 class = "logo">MunchTime</h1>
@@ -80,50 +23,79 @@
 
         <!--logout-->
         <div class="sidebar-logout">
-            <a href="#"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+            <a href="startup.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
         </div>
     </div>
+    <!--main-->
     <div class="main">
-        <div class="restaurant-hero">
-            <img src="https://asianinspirations.com.au/wp-content/uploads/2019/07/Thai-Cuisine-Restaurant.jpg" alt="Featured Restaurant Image" style="width:1000px;height:600px;">
+        <!--main navbar-->
+        <div class="main-navbar">
+            <!--menu when appear on mobile version-->
+            <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
+            <!--search bar-->
+            <!--cart summary-->
+            <div id="cartSummary" style="width:100%; text-align:right; margin-right:20px">No items in cart</div>
+            <!--profile icon on left side of navbar-->
+            <div class="profile">
+                <a class="cart" href="#" title="View Cart" onClick="window.location.href = 'cart.html'">
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <span id="itemCount" class="item-count-badge">0</span>
+                </a>
+            </div>
         </div>
-        <div class="restaurant-info">
-            <h1>Thai Spice Delight</h1>
+        <div class="restaurant-hero">
+            <img src="https://asianinspirations.com.au/wp-content/uploads/2019/07/Thai-Cuisine-Restaurant.jpg" alt="Featured Restaurant Image">
+        </div>
+		<div class="main-highlight" style="text-align:center">
+			<h1>Thai Spice Delight</h1>
             <p>Indulge in the exotic flavors of Thailand with our authentic and aromatic dishes, crafted with the finest Thai spices and ingredients.</p>
             <p><strong>Location:</strong> 789 Thai Street, Spice Town, ST 67890</p>
             <p><strong>Hours:</strong> Monday - Sunday, 12:00 PM to 10:00 PM</p>
         </div>
-        <div class="menu-highlights">
-            <h2>Featured Dishes</h2>
-            <div class="highlight-wrapper">
-                <div class="highlight-card">
-                    <img class="highlight-img" src="https://minimalistbaker.com/wp-content/uploads/2019/07/Massaman-Curry-SQUARE.jpg" alt="Thai Massaman Curry">
-                    <div class="highlight-desc">
-                        <h4>Massaman Curry</h4>
-                        <p>$15.00</p>
+        <!--main menus / order-->
+        <div class="main-menus">
+            <!--list of food menus-->
+            <div class="main-detail">
+                <h2 class="main-title">Choose Order</h2>
+                <div class="detail-wrapper">
+                    <div class="detail-card">
+                        <img class="detail-img" src="https://minimalistbaker.com/wp-content/uploads/2019/07/Massaman-Curry-SQUARE.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Massaman Curry</h4><br />
+                                <p class="price">$15.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
                     </div>
-                </div>
-                <div class="highlight-card">
-                    <img class="highlight-img" src="https://healthyfitnessmeals.com/wp-content/uploads/2020/09/THAI-BASIL-CHICKEN-6.jpg" alt="Thai Basil Chicken">
-                    <div class="highlight-desc">
-                        <h4>Basil Chicken</h4>
-                        <p>$12.00</p>
+                    <div class="detail-card">
+                        <img class="detail-img" src="https://healthyfitnessmeals.com/wp-content/uploads/2020/09/THAI-BASIL-CHICKEN-6.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Basil Chicken</h4><br />
+                                <p class="price">$12.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
                     </div>
-                </div>
-                <div class="highlight-card">
-                    <img class="highlight-img" src="https://lovingitvegan.com/wp-content/uploads/2022/06/Vegan-Pad-Thai-Square-3.jpg" alt="Thai Pad Thai">
-                    <div class="highlight-desc">
-                        <h4>Pad Thai</h4>
-                        <p>$10.00</p>
+					<div class="detail-card">
+                        <img class="detail-img" src="https://lovingitvegan.com/wp-content/uploads/2022/06/Vegan-Pad-Thai-Square-3.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4>Pad Thai</h4><br />
+                                <p class="price">$10.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="bookmark-outline"></ion-icon>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="about-restaurant">
+		<div class="main-highlight" style="text-align:center">
             <h2>About Us</h2>
             <p>Established in 2003, Thai Spice Delight offers an enchanting culinary journey through Thailand's rich and diverse cuisine, blending bold flavors and traditional recipes.</p>
         </div>
-        <div class="customer-reviews">
+        <div class="main-highlight" style="text-align:center">
             <h2>Customer Reviews</h2>
             <div class="review">
                 <p>"Absolutely love the flavors at Thai Spice Delight! The Massaman Curry is my go-to dish, and it never disappoints." - Samantha Lee</p>
@@ -132,12 +104,82 @@
                 <p>"Thai Spice Delight is a gem! Their Pad Thai is simply mouthwatering, and the service is always excellent." - Michael Johnson</p>
             </div>
         </div>
+		<br />
     </div>
+	<div id="MassamanCurryModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Massaman Curry</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormMassamanCurry">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Massaman Curry')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="BasilChickenModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Basil Chicken</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormBasilChicken">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Basil Chicken')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="PadThaiModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Pad Thai</h2>
+			<p>Choose your options for the Shrimp Soup.</p>
+			<form id="addToCartFormPadThai">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="crackers" name="extras" value="crackers">
+				<label for="crackers">Extra Crackers</label><br>
+				<input type="checkbox" id="spice" name="extras" value="spice">
+				<label for="spice">Extra Spice</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button" onclick="addToCart('Pad Thai')">Add to Cart</button>
+			</form>
+		</div>
+	</div>
 </body>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 <!--adding javascript-->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="app.js"></script>
 </html>
