@@ -1,0 +1,189 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Edit - Golden Dragon</title>
+	<style>		
+		input {
+			width: 80%;
+			text-align: center;
+		}
+		
+		.main-detail>input{
+			display: none;
+		}
+		
+		button{
+			background-color: #545bbb;
+			color: white;
+			height: 50px;
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+    <!--sidebar-->
+    <div class = "sidebar">
+        <!--logo-->
+        <h1 class = "logo">MunchTime</h1>
+        <!--list of menu-->
+        <div class = "sidebar-menus">
+            <a><ion-icon name="storefront-outline"></ion-icon>Home</a>
+            <a><ion-icon name="receipt-outline"></ion-icon>Bills</a>
+            <a><ion-icon name="wallet-outline"></ion-icon>Wallet</a>
+            <a><ion-icon name="notifications-outline"></ion-icon>Notification</a>
+            <a><ion-icon name="chatbubbles-outline"></ion-icon>Contact Us</a>
+            <a><ion-icon name="settings-outline"></ion-icon>Setting</a>
+        </div>
+
+        <!--logout-->
+        <div class="sidebar-logout">
+            <a href="startup.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+        </div>
+    </div>
+    <!--main-->
+    <div class="main">
+        <!--main navbar-->
+        <div class="main-navbar">
+			<button onClick='alert("Changes saved!")'>Save Changes</button>
+        </div>
+        <div class="restaurant-hero">
+            <img src="https://www.pagodared.com/blog/wp-content/uploads/2018/02/WonFun-InteriorPR-copy.jpg" alt="Featured Restaurant Image">
+        </div>
+		<div class="main-highlight" style="text-align:center" id="section">
+            <h1 id="titleName" data-editable>Golden Dragon</h1>
+            <p data-editable>Experience the authentic flavors of Chinese cuisine with our wide selection of traditional dishes.</p>
+            <p><strong>Address:</strong> <span  data-editable>123 Main Street, Chinatown, City, Country, 12345<span></p>
+            <p><strong>Hours:</strong><span data-editable> Monday - Sunday, 11:00 AM to 10:00 PM</span></p>
+        </div>
+        <!--main menus / order-->
+        <div class="main-menus">
+            <!--list of food menus-->
+            <div class="main-detail">
+				<button onClick="addItem()">Add item</button>
+                <h2 class="main-title">Choose Order</h2>
+                <div id="item-area" class="detail-wrapper">
+                    <div id="item1" class="detail-card">
+                        <img class="detail-img" src="https://christieathome.com/wp-content/uploads/2022/02/General-Tso-Chicken-8.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4 data-editable>Spicy Chicken</h4>
+								<p>Extras: <span data-editable>Mild Sauce</span></p>
+                                <p class="price" data-editable>$15.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="close-circle-outline" onClick=(item1.style.display="none")></ion-icon>
+                        </div>
+                    </div>
+                    <div id="item2" class="detail-card">
+                        <img class="detail-img" src="https://hips.hearstapps.com/hmg-prod/images/mapo-tofu-2-jpg-1642115176.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4 data-editable>Mapo Tofu</h4>
+								<p>Extras: <span data-editable>Extra Beef</span></p>
+                                <p class="price" data-editable>$12.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="close-circle-outline" onClick=(item2.style.display="none")></ion-icon>
+                        </div>
+                    </div>
+					<div id="item3" class="detail-card">
+                        <img class="detail-img" src="https://anisland.cooking/wp-content/uploads/2022/02/Roast-Cantonese-Duck-2022.jpg">
+                        <div class="detail-desc">
+                            <div class="detail-name">
+                                <h4 data-editable>Beijing Duck</h4>
+								<p>Extras: <span data-editable>Extra Onion, Extra Cucumber</span></p>
+                                <p class="price" data-editable>$25.00</p>
+                            </div>
+                            <ion-icon class="detail-favourites" name="close-circle-outline" onClick=(item3.style.display="none")></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<br />
+		<div class="main-highlight" style="text-align:center">
+            <h2>About Us</h2>
+            <p data-editable>Established in 1990, Golden Dragon has been serving the local community with authentic Chinese cuisine prepared with fresh ingredients and traditional recipes.</p>
+        </div>
+        <div class="main-highlight" style="text-align:center">
+            <h2>Customer Reviews</h2>
+            <div class="review">
+                <p>"Absolutely delicious! The flavors were amazing, and the service was excellent." - Emily Chen</p>
+            </div>
+            <div class="review">
+                <p>"Best Chinese food in town! Highly recommend the Mapo Tofu." - Michael Wong</p>
+            </div>
+        </div>
+		<br />
+    </div>
+	<div id="SpicyChickenModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Spicy Chicken</h2>
+			<p>Choose your options for the Spicy Chicken.</p>
+			<form id="addToCartFormSpicyChicken">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="mild" name="extras" value="mild">
+				<label for="mild">Mild Sauce</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="MapoTofuModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Mapo Tofu</h2>
+			<p>Choose your options for the Mapo Tofu.</p>
+			<form id="addToCartFormMapoTofu">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="beef" name="extras" value="beef">
+				<label for="beef">Extra Beef</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+	<div id="BeijingDuckModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h2>Beijing Duck</h2>
+			<p>Choose your options for the Beijing Duck.</p>
+			<form id="addToCartFormBeijingDuck">
+				<label for="size">Size:</label>
+				<select id="size" name="size">
+					<option value="small">Small</option>
+					<option value="large">Large</option>
+				</select>
+				<label for="extras">Add-ons:</label>
+				<input type="checkbox" id="cucumber" name="extras" value="cucumber">
+				<label for="cucumber">Extra Cucumber</label><br>
+				<input type="checkbox" id="onion" name="extras" value="onion">
+				<label for="onion">Extra Onion</label><br>
+				<label for="quantity">Quantity:</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" max="9"><br>
+				<button type="button">Add to Cart</button>
+			</form>
+		</div>
+	</div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+<!--adding javascript-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="editApp.js"></script>
+</html>
