@@ -34,9 +34,10 @@
             <ion-icon class="menu-toggle" name="menu-outline"></ion-icon>
             <!--search bar-->
             <div class="search">
-                <input type="text" placeholder="What you want to eat?">
-                <button class="search-btn">Search</button>
+                <input type="text" id="searchInput" placeholder="What you want to eat?">
+                <button class="search-btn" onclick="searchCuisine()">Search</button>
             </div>
+            <script src="SearchCuisine.js"> </script>
             <!--profile icon on left side of navbar-->
             <div class="profile">
                 <a class="user" href="#" title="Profile" onClick="window.location.href = 'User Information.html'">

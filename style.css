@@ -84,7 +84,7 @@ body{
 }
 
 .search{
-    width: 60%;
+    width: 45%;
     height: 40px;
     display: flex;
     justify-content: space-around;
@@ -106,8 +106,9 @@ body{
     color: var(--whiteColor);
     border: none;
     border-radius: 20px;
-    width: 120px;
+    width: 21%;
     cursor: pointer;
+    
 }
 
 .search:hover {
