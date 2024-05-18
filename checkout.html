@@ -38,7 +38,7 @@
                         <div class="col">
                             <div class="item">
                                 <span class="title">Card number</span>
-                                <input class="blank card-number" value="4111 1111 1111 1111" onFocus="this.value = ''" onBlur="if (this.value === '') { this.value = '4111 1111 1111 1111' }" onkeyup="if (this.value.length === 4 || this.value.length === 4 * 2 + 1 || this.value.length === 4 * 3 + 2) { this.value += ' ' }" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength=19 required />
+                                <input class="blank card-number" value="1111 1111 1111 1111" onFocus="this.value = ''" onBlur="if (this.value === '') { this.value = '4111 1111 1111 1111' }" onkeyup="if (this.value.length === 4 || this.value.length === 4 * 2 + 1 || this.value.length === 4 * 3 + 2) { this.value += ' ' }" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength=19 required />
                             </div>
                         </div>
                     </section>
@@ -58,7 +58,7 @@
                         <img class="info-icon" src="images/info.png" alt="" />
                     </section>
                 </div>
-                <button class="payment-btn" type="button"><img src="images/lock.png" alt="" />Finish and pay</button>
+                <button class="payment-btn" type="button" onClick="window.location.href = 'order.html'"><img src="images/lock.png" alt="" />Finish and pay</button>
             </div>
         </div>
     </body>
