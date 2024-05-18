@@ -22,7 +22,11 @@
 					address: "UOW, Wollongong NSW 2500",
 				};
 			localStorage.setItem('user', JSON.stringify(user));
-            } else {
+            }
+	    else if (username === "goldenDragon" && password === "password"){
+				window.location.href = 'editDragon.html';
+	    }
+	    else {
                 alert('Incorrect username or password!');
             }
         }
