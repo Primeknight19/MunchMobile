@@ -37,13 +37,6 @@
 				<button class="checkout-button" id="checkout">Checkout - $0.00</button>
 			</div>
 		</div>
-        <!--main menus / order-->
-		<div class="item-head">
-			<h1 id="myCart">My Cart</h1>
-			<br /><br />
-			<button class="simple-button" onClick="window.location.href = 'index.html'">Back to menu</button>
-			<br />
-		</div>
 		<span id="item-area" >
 		</span>
 		<script type="text/javascript">
@@ -123,20 +116,28 @@
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="app.js"></script>
 <script type="text/javascript">
-	var modal = document.getElementById("paymentModal");
-	var btn = document.getElementById("checkout");
-	var span = document.getElementsByClassName("close")[0];
+	document.getElementById("checkout").addEventListener("click", function()
+	{
+		alert();
+		var cartItem = JSON.parse(localStorage.getItem('cart')) || [];
+		var subTotal = parseFloat(document.getElementById("subtotal").textContent.replace('$',''));
+		var deliveryFee = 8.00 //Assuming a fixed delivery fee
+		var totalPaid = subTotal + deliveryFee;
 
-	btn.onclick = function() {
-		modal.style.display = "block";
-	}
-	span.onclick = function() {
-		modal.style.display = "none";
-	}
-	window.onclick = function(event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-	}
+		var orderDetails =
+		{
+			dishes: cartItem.map(item =>
+				({
+					name: item.product,
+					quantity: item.quantity,
+					price: item.price * item.quantity
+				})
+			),
+			totalPaid: totalPaid
+		};
+
+		localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
+		window.location.href='checkout.html';
+	});
 </script>
 </html>
