@@ -64,7 +64,7 @@
                         <div class="col">
                             <div class="item">
                                 <span class="title">Card number</span>
-                                <input class="blank card-number" value="1111 1111 1111 1111" onFocus="this.value = ''" onBlur="if (this.value === '') { this.value = '4111 1111 1111 1111' }" onkeyup="if (this.value.length === 4 || this.value.length === 4 * 2 + 1 || this.value.length === 4 * 3 + 2) { this.value += ' ' }" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength=19 required />
+                                <input class="blank card-number" id="cardNumber" value="1111 1111 1111 1111" onFocus="this.value = ''" onBlur="if (this.value === '') { this.value = '4111 1111 1111 1111' }" onkeyup="if (this.value.length === 4 || this.value.length === 4 * 2 + 1 || this.value.length === 4 * 3 + 2) { this.value += ' ' }" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength=19 required />
                             </div>
                         </div>
                     </section>
@@ -72,13 +72,13 @@
                         <div class="col">
                             <div class="item">
                                 <span class="title">Expiry</span>
-                                <input class="blank" placeholder="MM/YY" onkeyup="if (this.value.length === 2) { this.value += '/' }" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength=5 required />
+                                <input class="blank" id="expiryDate" placeholder="MM/YY" onkeyup="if (this.value.length === 2) { this.value += '/' }" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength=5 required />
                             </div>
                         </div>
                         <div class="col">
                             <div class="item">
                                 <span class="title">CVC</span>
-                                <input class="blank" placeholder="123" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength=3 required />
+                                <input class="blank" id="cvv" placeholder="123" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength=3 required />
                             </div>
                         </div>
                         <img class="info-icon" src="images/info.png" alt="" />
@@ -97,7 +97,7 @@
             } else {
                 subscriptionDetails.style.display = 'none';
             }
-        });
+            });
 
         function updateDescription() {
             var plan = document.getElementById('subscriptionPlan').value;
@@ -111,6 +111,21 @@
             }
         }
 
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fetching saved card details from localStorage
+            let savedCardDetails = localStorage.getItem('cardData');
+            if (savedCardDetails) {
+                savedCardDetails = JSON.parse(savedCardDetails);
+
+                // Checking if card details exist and populating them
+                if (savedCardDetails.cardNumber && savedCardDetails.cardHolder && savedCardDetails.expiryDate && savedCardDetails.cvv) {
+                    document.getElementById('cardNumber').value = savedCardDetails.cardNumber;
+                    document.getElementById('cardHolder').value = savedCardDetails.cardHolder;
+                    document.getElementById('expiryDate').value = savedCardDetails.expiryDate;
+                    document.getElementById('cvv').value = savedCardDetails.cvv;
+                }
+            }
+        });
 
 
         </script>
