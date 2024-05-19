@@ -804,27 +804,3 @@ function updateCart()
 
 updateCart();
 updateSubTotal();
-
-//Add event listeners for checkout button
-document.getElementById("checkout").addEventListener("click", function()
-{
-    var cartItem = JSON.parse(localStorage.getItem('cart')) || [];
-    var subTotal = parseFloat(document.getElementById("subtotal").textContent.replace('$',''));
-    var deliveryFee = 8.00 //Assuming a fixed delivery fee
-    var totalPaid = subTotal + deliveryFee;
-
-    var orderDetails =
-    {
-        dishes: cartItem.map(item =>
-            ({
-                name: item.product,
-                quantity: item.quantity,
-                price: item.price * item.quantity
-            })
-        ),
-        totalPaid: totalPaid
-    };
-
-    localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
-    window.location.href='order.html';
-});
