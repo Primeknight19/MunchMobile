@@ -753,3 +753,78 @@ function showAll(){
 		s.style.display = "block";
 	}
 }
+
+function updateSubTotal()
+{
+    let uCart = JSON.parse(localStorage.getItem('cart')) || [];
+    let subTotal = 0;
+    for(let i = 0; i < uCart.length; i++)
+        {
+            subTotal += uCart[i].price * uCart[i].quantity;
+        }
+        document.getElementById("subtotal").innerHTML="$"+subTotal.toFixed(2);
+        document.getElementById("checkout").innerHTML="Checkout - $" + (subTotal + 8).toFixed(2);
+}
+
+function updateCart()
+{
+    document.getElementById("item-area").innerHTML="";
+    let uCart = JSON.parse(localStorage.getItem('cart')) || [];
+    let i = 1;
+    if(uCart.length === 0)
+        {
+            document.getElementById("myCart").innerHTML = "<h3> Your cart is currently empty!</h3>";
+            document.getElementById("right-area").innerHTML="";
+        }
+        else
+        {
+            for(const element of uCart)
+                {
+                    document.getElementById("item-area").innerHTML +=`<div class = 'item' id= item${i}>
+                    <table>
+                    <tr>
+                        <td style='width:20% max-width:100px'><img class='detail-img' src='${element.image}'></td>
+                        <td style='width:60%; padding-left:20px;'><span class='item-name'>${element.product}</span>
+                        <br />${toCaptial(element.size)}${toCaptial(element.extras)}<br /><br />
+                        <span id='removeID${i}'><button class='simple-button' onClick='removeItem(${i})'>Remove</button></span></td>
+                        <td style='width:20%; min-width:100px; padding-right:10px;' align='right'>
+                            <button class='change-num' onClick='subAmount(${i})'>-</button>
+                            &nbsp;&nbsp;<span id='amountEle${i}'>${element.quantity}</span>&nbsp;&nbsp;
+                            <button class='change-num' onClick='addAmount(${i})'>+</button>
+                        </td>
+                        <td style='width:10%' id='itemPrice${i}'>$${(element.price * element.quantity).toFixed(2)}</td>
+                    </tr>
+                </table>
+                <span style='float:left'></span>
+            </div>`;
+            i++;
+        }
+    }
+}
+
+updateCart();
+updateSubTotal();
+
+//Add event listeners for checkout button
+document.getElementById("checkout").addEventListener("click", function()
+{
+    var cartItem = JSON.parse(localStorage.getItem('cart')) || [];
+    var subTotal = parseFloat(document.getElementById("subtotal").textContent.replace('$',''));
+    var deliveryFee = 8.00 //Assuming a fixed delivery fee
+    var totalPaid = subTotal + deliveryFee;
+
+    var orderDetails =
+    {
+        dishes: cartItem.map(item =>
+            ({
+                name: item.product,
+                quantity: item.quantity,
+                price: item.price * item.quantity
+            })
+        ),
+        totalPaid: totalPaid
+    };
+
+    localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
+    window.location.href='order.html';
+});
