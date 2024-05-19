@@ -116,7 +116,6 @@
 <script type="text/javascript">
 	document.getElementById("checkout").addEventListener("click", function()
 	{
-		alert();
 		var cartItem = JSON.parse(localStorage.getItem('cart')) || [];
 		var subTotal = parseFloat(document.getElementById("subtotal").textContent.replace('$',''));
 		var deliveryFee = 8.00 //Assuming a fixed delivery fee
