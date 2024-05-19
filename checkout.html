@@ -10,6 +10,32 @@
         <div class="full-screen">
             <div class="container">
                 <div class="payment-box">
+                                        <!-- Subscription Option -->
+                    <section class="row options">
+                        <div class="item">
+                            <label class="label">
+                                <input class="checkbox" type="checkbox" name="subscription" id="monthlySubscription">
+                                <span class="checkboxInput"></span><span>Monthly Subscription</span>
+                            </label>
+                        </div>
+                    </section>
+                    <!-- Details for Subscription -->
+                    <section class="row blanks">
+                        <div class="col">
+                            <div class="subscription-details" style="display: none;">
+                                <span class="title">Subscription Plan</span>
+                                <select class="blank" id="subscriptionPlan" onchange="updateDescription()" required>
+                                    <option value="">-- --</option>
+                                    <option value="basic">Basic - $9.99/month</option>
+                                    <option value="premium">Premium - $19.99/month</option>
+                                </select>
+                            </div>
+                            <div id="subscriptionDescription">
+                                <p id="basicDesc" style="display: none;">Basic plan offers access to a wide selection of restaurants, with 2 free deliveries per month and exclusive discounts at select eateries. </p>
+                                <p id="premiumDesc" style="display: none;">Premium plan subscription includes unlimited free deliveries, access to premium-only menu items, and higher discounts at all partner restaurants.</p>
+                            </div>
+                        </div>
+                    </section>
                     <section class="row options first">
                         <div class="item">
                             <label class="label">
@@ -61,5 +87,32 @@
                 <button class="payment-btn" type="button" onClick="window.location.href = 'order.html'"><img src="images/lock.png" alt="" />Finish and pay</button>
             </div>
         </div>
+
+        <script>
+
+            document.getElementById('monthlySubscription').addEventListener('change', function() {
+            var subscriptionDetails = document.querySelector('.subscription-details');
+            if (this.checked) {
+                subscriptionDetails.style.display = 'block';
+            } else {
+                subscriptionDetails.style.display = 'none';
+            }
+        });
+
+        function updateDescription() {
+            var plan = document.getElementById('subscriptionPlan').value;
+            document.getElementById('basicDesc').style.display = 'none';
+            document.getElementById('premiumDesc').style.display = 'none';
+            
+            if (plan === 'basic') {
+                document.getElementById('basicDesc').style.display = 'block';
+            } else if (plan === 'premium') {
+                document.getElementById('premiumDesc').style.display = 'block';
+            }
+        }
+
+
+
+        </script>
     </body>
 </html>
