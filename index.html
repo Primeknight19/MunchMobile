@@ -40,11 +40,6 @@
             <script src="SearchCuisine.js"> </script>
             <!--profile icon on left side of navbar-->
             <div class="profile">
-                <a class="user" href="#" title="Profile" onClick="window.location.href = 'User Information.html'">
-                    <ion-icon name="person-outline"></ion-icon>
-                </a>
-            </div>
-            <div class="profile">
                 <a class="cart" href="#" title="View Cart" onClick="window.location.href = 'cart.html'">
                     <ion-icon name="cart-outline"></ion-icon>
                     <span id="itemCount" class="item-count-badge">0</span>
@@ -303,7 +298,7 @@
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="app.js"></script>
-<!-- <script type="text/javascript"> -->
-	<!-- localStorage.removeItem('cart');
-</script>-->
+<script type="text/javascript">
+	localStorage.removeItem('cart');
+</script>
 </html>
