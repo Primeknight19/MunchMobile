@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+<!--DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UFT-8">
@@ -12,4 +13,28 @@
 	<script type="text/javascript">
 		localStorage.removeItem('cart');
 	</script>
+</html>-->
+<!DOCTYPE html>
+<html lang ="en">
+	<head>
+		<meta charset="UFT-8">
+		<link rel="stylesheet" href="order_confirmation.css">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+		<title>Order Confirmation</title>
+	</head>
+	<body>
+		<div class="main">
+			<h2>Order Confirmation</h2>
+			<div>
+				<h3>Your order has been placed successfully!</h3>
+				<div>
+					<h4>Ordered Dishes:</h4>
+					<ul id="orderedDishes"></ul>
+					<h4>Total Paid: <span id = "totalPaid">$</span></h4>
+				</div>
+				<button id="continueOrdering">Continue ordering</button>
+			</div>
+		</div>
+	</body>
+	<script src="order_confirmation.js"></script>
 </html>
