@@ -37,6 +37,12 @@
 				<button class="checkout-button" id="checkout">Checkout - $0.00</button>
 			</div>
 		</div>
+	    	<div class="item-head">
+			<h1 id="myCart">My Cart</h1>
+			<br /><br />
+			<button class="simple-button" onClick="window.location.href = 'index.html'">Back to menu</button>
+			<br />
+		</div>
 		<span id="item-area" >
 		</span>
 		<script type="text/javascript">
@@ -100,14 +106,6 @@
 			updateCart();
 			updateSubTotal();
 		</script>
-    </div>
-    <div id="paymentModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Payment</h2>
-            Payment details to go here.
-	    <button onClick="window.location.href = 'checkout.html'">Confirm</button>
-        </div>
     </div>
 </body>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
