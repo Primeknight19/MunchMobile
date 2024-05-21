@@ -30,6 +30,22 @@
                 alert('Incorrect username or password!');
             }
         }
+
+	function showLogoutMessage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('logout')) {
+                var messageDiv = document.createElement('div');
+                messageDiv.className = 'logout-message';
+                messageDiv.innerText = 'You have successfully logged out!';
+                document.body.appendChild(messageDiv);
+
+                setTimeout(function() {
+                    messageDiv.remove();
+                }, 2000); // Remove the message after 2 seconds
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', showLogoutMessage);
     </script>
 </head>
 <body>
