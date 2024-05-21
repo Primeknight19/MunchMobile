@@ -23,8 +23,14 @@
 
         <!--logout-->
         <div class="sidebar-logout">
-            <a href="login.html"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
+            <a href="#" onclick="handleLogout()"><ion-icon name="log-out-outline"></ion-icon>Logout</a>
         </div>
+        <script>
+           function handleLogout() {
+                // Redirect to the login page with a query parameter
+                window.location.href = 'login.html?logout=true';
+            }
+        </script>
     </div>
     <!--main-->
     <div class="main">
