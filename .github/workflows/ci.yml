@@ -46,4 +46,4 @@ jobs:
           EOF
         env:
           DOCKER_USERNAME: ${{ secrets.sanyashirodkar }}
-          DOCKER_PASSWORD: ${{ secrets.Ajay@@2002 }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
